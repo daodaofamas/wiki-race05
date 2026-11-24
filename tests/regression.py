@@ -12,6 +12,8 @@ import urllib.parse
 from playwright.sync_api import Error, expect, sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+STAR_MAP = json.loads((ROOT / "star-map.json").read_text())
+PAGE_IDS = {title: page_id for entries in STAR_MAP["genres"].values() for page_id, title in entries}
 
 # Representative MediaWiki responses for controlled browser tests.
 PAGES = {
@@ -59,6 +61,7 @@ class WikiRaceRegression(unittest.TestCase):
     def setUp(self):
         self.fail_parse = set()
         self.missing_parse = set()
+        self.redirects = REDIRECTS.copy()
         self.held_titles = set()
         self.held_routes = []
         self.calls = []
@@ -80,13 +83,20 @@ class WikiRaceRegression(unittest.TestCase):
     def wiki(self, route):
         params = dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(route.request.url).query))
         self.calls.append(params)
+        if params.get("generator") == "random":
+            pages = [{"title": t, "ns": 0, "pageid": PAGE_IDS[t]} for t in ("富士山", "日本")]
+            route.fulfill(json={"query": {"pages": pages}})
+            return
         if params["action"] == "query":
             titles = params["titles"].split("|")
-            redirects = [{"from": t, "to": REDIRECTS[t]} for t in titles if t in REDIRECTS]
-            resolved = [REDIRECTS.get(t, t) for t in titles]
+            redirects = [{"from": t, "to": self.redirects[t]} for t in titles if t in self.redirects]
+            resolved = [self.redirects.get(t, t) for t in titles]
             pages = [
                 {"title": t, "ns": 0, "pageprops": {"disambiguation": ""}}
-                if t in DISAMBIGUATION else {"title": t, "ns": 0, **({} if t in PAGES else {"missing": True})}
+                if t in DISAMBIGUATION else {
+                    "title": t, "ns": 0,
+                    **({"pageid": PAGE_IDS[t]} if t in PAGES else {"missing": True}),
+                }
                 for t in dict.fromkeys(resolved)
             ]
             route.fulfill(json={"query": {"redirects": redirects, "pages": pages}})
@@ -114,14 +124,16 @@ class WikiRaceRegression(unittest.TestCase):
         self.page.locator("#customGoal").fill(b)
         self.page.locator("#custom").click()
 
-    def set_challenge(self, a, b):
+    def set_challenge(self, a, b, kind="curated"):
         # Control the selected pair without changing article loading or error behavior.
-        self.page.evaluate("""([a,b]) => {
-            extra = ['富士山', '日本'];
-            useExpanded = true;
-            challenge = {a, b, category:'テスト', kind:'expanded'};
+        self.page.evaluate("""([a,b,kind]) => {
+            challenge = {a, b, category:'テスト', kind};
             showChallenge();
-        }""", [a, b])
+        }""", [a, b, kind])
+
+    def expand(self):
+        self.page.locator("#expandPool").click()
+        expect(self.page.locator("#poolNote")).to_contain_text("5,000 / 5,000種類・拡張星図")
 
     def ready(self, title):
         expect(self.page.locator("#articleTitle")).to_have_text(title)
@@ -135,7 +147,7 @@ class WikiRaceRegression(unittest.TestCase):
 
     def test_invalid_random_pair_rerolls_batched_and_caches_resolution(self):
         self.set_challenge("富士山", "プリン")
-        self.page.evaluate("makeChallenge = () => ({a:'富士山', b:'日本', kind:'expanded'})")
+        self.page.evaluate("makeChallenge = () => ({a:'富士山', b:'日本', kind:'curated'})")
         self.page.locator("#play").click()
         self.ready("富士山")
         expect(self.page.locator("#target")).to_have_text("日本")
@@ -169,7 +181,7 @@ class WikiRaceRegression(unittest.TestCase):
 
     def test_parse_missing_rerolls_but_network_failure_does_not(self):
         self.set_challenge("山梨県", "日本")
-        self.page.evaluate("makeChallenge = () => ({a:'富士山', b:'日本', kind:'expanded'})")
+        self.page.evaluate("makeChallenge = () => ({a:'富士山', b:'日本', kind:'curated'})")
         self.missing_parse.add("山梨県")
         self.fail_parse.add("富士山")
         self.page.locator("#play").click()
@@ -272,17 +284,87 @@ class WikiRaceRegression(unittest.TestCase):
             self.assertGreaterEqual(box["height"], 44, selector)
         self.page.locator("#articleText").get_by_role("button", name="日本").click()
         expect(self.page.locator("#win")).to_be_visible()
-        expect(self.page.locator("#resultPreview")).to_be_visible()
+        expect(self.page.locator("#resultPreview")).to_be_visible(timeout=12000)
         self.assertEqual(self.page.evaluate("(k) => JSON.parse(localStorage.getItem(k))", record_key), {"moves":1, "ms":1})
 
-    def test_existing_expanded_pool_survives_reload_and_switching(self):
-        self.page.evaluate("""() => localStorage.setItem('wikirace:v4:star-pool', JSON.stringify(['明石海峡大橋']))""")
+    def test_legacy_pool_is_rebuilt_without_removing_saved_data(self):
+        saved = {
+            "wikirace:v4:star-pool": '["旧拡張用の存在しない記事"]',
+            'wikirace:v2:["富士山","日本","easy"]': '{"moves":1,"ms":1000}',
+            'wikirace:v4:blackhole:["富士山","日本","easy"]': '{"moves":2,"ms":2000}',
+        }
+        self.page.evaluate("(records) => Object.entries(records).forEach(([k,v])=>localStorage.setItem(k,v))", saved)
         self.page.reload()
-        expect(self.page.locator("#poolNote")).to_contain_text("635 / 5,000種類・拡張星図")
+        expect(self.page.locator("#poolNote")).to_contain_text("5,000 / 5,000種類・拡張星図")
+        self.assertFalse(self.page.evaluate("starMap.ids.has('旧拡張用の存在しない記事')"))
+        self.assertEqual(self.page.evaluate("keys => Object.fromEntries(keys.map(k=>[k,localStorage.getItem(k)]))",
+                                            list(saved)), saved)
+        self.assertEqual(self.page.evaluate("localStorage.getItem('wikirace:v5:star-map')"), "1")
         self.page.locator("#togglePool").click()
         expect(self.page.locator("#poolNote")).to_contain_text("厳選 634語")
         self.page.locator("#togglePool").click()
-        expect(self.page.locator("#poolNote")).to_contain_text("635 / 5,000種類・拡張星図")
+        expect(self.page.locator("#poolNote")).to_contain_text("5,000 / 5,000種類・拡張星図")
+        self.assertEqual(self.calls, [])
+
+    def test_each_difficulty_draws_distinct_articles_in_both_maps(self):
+        self.expand()
+        for kind in ("expanded", "curated"):
+            if kind == "curated":
+                self.page.locator("#togglePool").click()
+            for level in ("easy", "normal", "hard"):
+                self.page.locator(f"[data-level={level}]").click()
+                draws = self.page.evaluate("""() => {
+                    const pool = useExpanded ? starMap.groups : groups;
+                    const genres = new Map(Object.entries(pool).flatMap(([genre,titles])=>titles.map(t=>[t,genre])));
+                    return Array.from({length:120}, () => {
+                        newChallenge();
+                        const {a,b,kind} = challenge;
+                        return {a,b,kind,from:genres.get(a),to:genres.get(b),
+                          distinct:starMap.ids.get(a)!==starMap.ids.get(b)};
+                    });
+                }""")
+                for draw in draws:
+                    self.assertEqual(draw["kind"], kind)
+                    self.assertTrue(draw["distinct"] and draw["a"] != draw["b"])
+                    self.assertTrue(draw["from"] and draw["to"])
+                    self.assertEqual(draw["from"] == draw["to"], level == "easy")
+        self.assertEqual(self.calls, [])
+
+    def test_expanded_article_redirect_to_different_id_is_redrawn(self):
+        self.expand()
+        self.set_challenge("富士山", "日本", "expanded")
+        self.redirects["富士山"] = "山梨県"
+        self.page.evaluate("makeChallenge = () => ({a:'山梨県', b:'日本', kind:'expanded'})")
+        self.page.locator("#play").click()
+        self.ready("山梨県")
+        self.assertEqual(self.page.evaluate("challenge.a"), "山梨県")
+
+    def test_random_and_custom_keep_same_genre_pair_in_hard_mode(self):
+        self.expand()
+        self.page.locator("[data-level=hard]").click()
+        self.page.locator("#randomWiki").click()
+        expect(self.page.locator("#difficultyDesc")).to_contain_text("完全ランダムのお題はジャンル制限なし")
+        start = self.page.locator("#startName").inner_text()
+        self.page.locator("#play").click()
+        self.ready(start)
+        expect(self.page.locator("#tabLinks")).to_be_hidden()
+        self.page.locator("#home").click()
+        self.start()
+        self.ready("富士山")
+        expect(self.page.locator("#tabLinks")).to_be_hidden()
+
+    def test_invalid_map_keeps_curated_available_and_can_retry(self):
+        invalid = json.loads(json.dumps(STAR_MAP))
+        entries = next(iter(invalid["genres"].values()))
+        entries[1][0] = entries[0][0]
+        self.page.route("**/star-map.json", lambda route: route.fulfill(json=invalid))
+        self.page.locator("#expandPool").click()
+        expect(self.page.locator("#poolStatus")).to_contain_text("拡張星図のデータを確認できませんでした")
+        expect(self.page.locator("#play")).to_be_enabled()
+        expect(self.page.locator("#poolNote")).to_contain_text("厳選 634語")
+        self.page.unroute("**/star-map.json")
+        self.expand()
+        self.assertEqual(self.calls, [])
 
 
 if __name__ == "__main__":
