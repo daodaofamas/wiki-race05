@@ -26,7 +26,7 @@ body{background:radial-gradient(ellipse at 87% 8%,#193453 0%,transparent 38%),ra
 .article-section{content-visibility:auto;contain-intrinsic-size:auto 320px}
 .article-section:first-child{content-visibility:visible}
 @media(max-width:520px){#error{scroll-margin-top:230px}.topline{gap:4px}.link-batch{contain-intrinsic-size:auto 560px}.article-section{contain-intrinsic-size:auto 460px}}
-</style></head><body><div class="starfield" aria-hidden="true"></div><div class="wrap"><header><div class="brand"><span class="mark" aria-hidden="true">✦</span> Wiki Race <span class="tag">STELLAR VOYAGE</span></div><button id="home" class="pill" hidden>トップへ</button><span id="version" class="pill">Ver.0.5.1</span></header>
+</style></head><body><div class="starfield" aria-hidden="true"></div><div class="wrap"><header><div class="brand"><span class="mark" aria-hidden="true">✦</span> Wiki Race <span class="tag">STELLAR VOYAGE</span></div><button id="home" class="pill" hidden>トップへ</button><span id="version" class="pill">Ver.0.5.2</span></header>
 <main id="menu"><section class="hero"><svg class="constellation" viewBox="0 0 420 250" fill="none" aria-hidden="true"><ellipse cx="265" cy="125" rx="145" ry="73" transform="rotate(-26 265 125)" stroke="#477390" stroke-dasharray="3 8"/><ellipse cx="265" cy="125" rx="105" ry="105" stroke="#345a78"/><path d="M68 187L135 118 222 154 270 65 340 92 387 27M135 118L176 36 270 65M222 154L310 211 340 92" stroke="#85cce7" stroke-width="1.2"/><g fill="#c7f5ff"><circle cx="68" cy="187" r="3"/><circle cx="135" cy="118" r="4"/><circle cx="176" cy="36" r="3"/><circle cx="222" cy="154" r="4"/><circle cx="270" cy="65" r="5"/><circle cx="340" cy="92" r="3"/><circle cx="310" cy="211" r="3"/><circle cx="387" cy="27" r="4"/></g><path d="M270 49v32m-16-16h32" stroke="#c7f5ff" stroke-width="1"/></svg><div class="eyebrow">✦ &nbsp; THE KNOWLEDGE GALAXY</div><h1>知識を巡る、<br><em>星空の航路。</em></h1><p>ひとつの記事は、ひとつの星。Wikipediaのリンクをたどり、目的の星へたどり着こう。</p><a class="guide-jump" href="#guide">初めての方へ・遊び方 ↓</a></section><section class="card"><div class="topline"><div class="eyebrow">FLIGHT PLAN</div><span id="level" class="pill"></span></div><div class="mode-label eyebrow">GAME MODE / 航行モード</div><div class="mode-grid" role="group" aria-label="ゲームモード"><button data-mode="classic" aria-pressed="true"><strong>✦ 通常モード</strong><span>CLASSIC RACE</span></button><button data-mode="blackhole" aria-pressed="false"><strong>◉ ブラックホール</strong><span>BLACK HOLE</span></button></div><p class="muted mode-desc" id="modeDesc"></p><div class="eyebrow mode-label">DIFFICULTY / 難易度</div><div class="difficulty" role="group" aria-label="難易度"><button data-level="easy" aria-pressed="true">かんたん</button><button data-level="normal" aria-pressed="false">ふつう</button><button data-level="hard" aria-pressed="false">むずかしい</button></div><p id="difficultyDesc" class="muted"></p><div class="route"><div class="start"><span class="small">START</span><strong id="startName"></strong></div><span class="route-arrow" aria-hidden="true">⟶</span><div class="goal"><span class="small">GOAL</span><strong id="goalName"></strong></div></div><div class="actions"><button id="play" class="primary">航海開始 →</button><button id="shuffle" class="secondary">別のお題 ↻</button></div><p id="best" class="record" style="margin:12px 0 0"></p><p id="poolNote" class="pool-note"></p><div class="pool-control"><button class="secondary" id="expandPool">星図を5,000語に拡張 ↗</button><button class="secondary" id="togglePool" hidden>厳選のお題に切替</button><button class="secondary" id="cancelPool" hidden>取得を中止</button></div><div class="pool-meter" id="poolMeter" hidden><div id="poolProgress"></div></div><p class="pool-status" id="poolStatus" role="status"></p><button id="randomWiki" class="secondary full">Wikipediaから完全ランダムなお題 ↗</button><p id="menuStatus" class="menu-status" role="status" hidden></p><div id="menuError" class="error" role="alert"></div><p class="source-note">● 本番モード：日本語版Wikipedia APIから記事を取得</p></section><section class="card flight-guide" id="guide" aria-labelledby="guide-title">
 <div class="eyebrow">✦ &nbsp; FLIGHT GUIDE / 航海ガイド</div>
 <h2 id="guide-title">知識の宇宙を、旅しよう。</h2>
@@ -39,10 +39,10 @@ body{background:radial-gradient(ellipse at 87% 8%,#193453 0%,transparent 38%),ra
 <div class="guide-modes"><div><strong>✦ 通常モード</strong><small>CLASSIC RACE</small><p>リンクの文字は最後まで表示されます。記事のつながりを考え、タイムとクリック数の自己ベストに挑戦しましょう。</p></div><div class="guide-blackhole"><strong>◉ ブラックホール</strong><small>BLACK HOLE</small><p>開始20秒後からリンクの文字が徐々に■に変わり、3分で完全に隠れます。隠れたリンクも押せますが、記事を移動しても侵食は戻りません。残された文章をヒントに突破しましょう。</p><div class="guide-mask" aria-label="リンクが隠れるイメージ">太平洋高気圧 → 太■洋■気圧 → ■■■■■■</div><div class="guide-stages" aria-label="侵食率の変化"><span>20秒 15%</span><span>1分 45%</span><span>2分 80%</span><span>3分 100%</span></div></div></div>
 <h3>03 / 難易度</h3>
 <dl class="guide-levels"><div><dt>かんたん</dt><dd>同じジャンルから出題。本文・リンク一覧を利用可能。</dd></div><div><dt>ふつう</dt><dd>異なるジャンルから出題。本文・リンク一覧を利用可能。</dd></div><div><dt>むずかしい</dt><dd>異なるジャンルから出題。本文中のリンクのみ利用可能。</dd></div></dl>
-<p class="muted">拡張星図・完全ランダム・自分で設定するお題はジャンル制限の対象外です。記事間の最短距離は保証されません。</p>
+<p class="muted">厳選星図・拡張星図では、難易度に応じたジャンル制限が適用されます。完全ランダム・自分で設定するお題はジャンル制限の対象外です。記事間の最短距離は保証されません。</p>
 <h3>04 / 航海のルール</h3>
 <ul class="guide-rules"><li>検索エンジンや外部サイトを使わず、ゲーム内のリンクだけで進もう。</li><li>ゲーム内で前の記事に戻る機能はありません。</li><li>クリア後は結果・航路・サイトURL・結果画像を共有できます。</li></ul>
-<p class="guide-tip">✧ 星図を拡張すると、Wikipediaから追加の記事を取得し、最大5,000語のお題をこの端末で利用できます。</p>
+<p class="guide-tip">✧ 拡張星図には、日本語版Wikipediaの公開カテゴリーで分類した5,000語のお題が含まれます。</p>
 <button class="secondary full" id="demo">通信なしで遊べる練習モード</button>
 <p class="muted guide-demo-note">練習モードは独自の短い記事を使って、遊び方を試せます。</p>
 </section><details class="card"><summary style="cursor:pointer;font-weight:700">自分でお題を設定</summary><div class="grid"><label class="muted">スタート<input id="customStart" class="select" placeholder="例：富士山" maxlength="150"></label><label class="muted">ゴール<input id="customGoal" class="select" placeholder="例：宇宙" maxlength="150"></label></div><button id="custom" class="primary full">このお題で開始</button><p id="customError" class="error" role="alert"></p></details></main>
@@ -72,17 +72,60 @@ const groupNames=Object.keys(groups);
 const levels={easy:{name:'かんたん',desc:'同じジャンルから出題。記事本文・リンク一覧を使えます。'},normal:{name:'ふつう',desc:'異なるジャンルから出題。記事本文・リンク一覧を使えます。'},hard:{name:'むずかしい',desc:'異なるジャンルから出題。本文中のリンクのみ使用できます。'}};
 let level='easy', challenge=null, mode='classic';
 const modes={classic:{name:'通常',desc:'時間とクリック数を競う通常の航海。リンクは最後まで読めます。'},blackhole:{name:'ブラックホール',desc:'20秒後からリンクの文字が徐々に消失。本文の普通の文字は残り、隠れたリンクも押せます。'}};
-const POOL_TARGET=5000, POOL_KEY='wikirace:v4:star-pool';
+const POOL_TARGET=5000, STAR_MAP_VERSION=1;
+const LEGACY_POOL_KEY='wikirace:v4:star-pool', STAR_MAP_KEY='wikirace:v5:star-map';
 const curated=[...new Set(Object.values(groups).flat())];
-const curatedSet=new Set(curated);let extra=[];try{const saved=JSON.parse(localStorage.getItem(POOL_KEY)||'[]');if(Array.isArray(saved))extra=[...new Set(saved.filter(t=>typeof t==='string'&&t.length>0&&!curatedSet.has(t)))].slice(0,POOL_TARGET-curated.length)}catch{}
-let useExpanded=extra.length>0, collecting=false;
-function poolCount(){return curated.length+extra.length}
-function refreshPool(){const n=poolCount();$('expandPool').textContent=n>=POOL_TARGET?'星図 5,000語取得済み':n>curated.length?'星図を拡張（続き）':'星図を5,000語に拡張 ↗';$('expandPool').disabled=busy||n>=POOL_TARGET;$('togglePool').hidden=!extra.length;$('togglePool').disabled=busy;$('togglePool').textContent=useExpanded?'厳選のお題に切替':'拡張星図に切替';$('poolMeter').hidden=!collecting&&!extra.length;$('poolProgress').style.width=(n/POOL_TARGET*100)+'%';$('cancelPool').hidden=!collecting}
+const curatedGenres=new Map(groupNames.flatMap(genre=>groups[genre].map(title=>[title,genre])));
+let starMap=null, useExpanded=false, collecting=false;
+
+function restoreExpandedPreference(){
+  try{
+    if(localStorage.getItem(STAR_MAP_KEY)===String(STAR_MAP_VERSION))return true;
+    const legacy=JSON.parse(localStorage.getItem(LEGACY_POOL_KEY)??'null');
+    return Array.isArray(legacy)&&legacy.some(title=>typeof title==='string'&&title.trim());
+  }catch{return false}
+}
+
+function readStarMap(data){
+  const badMap=()=>new GameError('map','拡張星図のデータを確認できませんでした。時間をおいて再試行してください。');
+  if(data?.version!==STAR_MAP_VERSION||!data.genres||Object.keys(data.genres).length!==groupNames.length)throw badMap();
+  const expandedGroups={}, ids=new Map(), usedIds=new Set();
+  for(const genre of groupNames){
+    const entries=data.genres[genre];
+    if(!Array.isArray(entries))throw badMap();
+    const titles=new Set();
+    for(const entry of entries){
+      if(!Array.isArray(entry)||entry.length!==2)throw badMap();
+      const [id,title]=entry;
+      if(!Number.isSafeInteger(id)||id<1||usedIds.has(id)||typeof title!=='string'||!title||
+        norm(title)!==title||/[|#]/.test(title)||ids.has(title))throw badMap();
+      usedIds.add(id);
+      ids.set(title,id);
+      titles.add(title);
+    }
+    if(!groups[genre].every(title=>titles.has(title)))throw badMap();
+    expandedGroups[genre]=[...titles];
+  }
+  if(ids.size!==POOL_TARGET)throw badMap();
+  return {groups:expandedGroups,ids};
+}
+
+function poolCount(){return starMap?.ids.size??curated.length}
+function refreshPool(){
+  $('expandPool').textContent=starMap?'星図 5,000語取得済み':'星図を5,000語に拡張 ↗';
+  $('expandPool').disabled=busy||Boolean(starMap);
+  $('togglePool').hidden=!starMap;
+  $('togglePool').disabled=busy;
+  $('togglePool').textContent=useExpanded?'厳選のお題に切替':'拡張星図に切替';
+  $('poolMeter').hidden=!collecting&&!starMap;
+  $('poolProgress').style.width=(poolCount()/POOL_TARGET*100)+'%';
+  $('cancelPool').hidden=!collecting;
+}
 function modeName(m){return modes[m].name}
 function refreshMode(){document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));$('modeDesc').textContent=modes[mode].desc}
 
 const demoData={猫:{text:'猫は人間と暮らす身近な動物。イエネコは哺乳類で、狩りを得意とする。',links:['動物','哺乳類','人間']},動物:{text:'動物は地球上に暮らす生物の一群。',links:['地球','生物','哺乳類']},哺乳類:{text:'哺乳類には猫や人間などが含まれる。',links:['猫','人間','動物']},人間:{text:'人間はさまざまな地域に暮らし、宇宙にも進出している。',links:['地球','宇宙飛行士','動物']},地球:{text:'地球は太陽系の惑星で、衛星に月を持つ。',links:['太陽系','月','生物']},生物:{text:'生物は地球上の多様な環境に存在する。',links:['地球','動物']},宇宙飛行士:{text:'宇宙飛行士は宇宙で活動する人。月を訪れた人もいる。',links:['月','人間','地球']},太陽系:{text:'太陽系には地球などの惑星とその衛星がある。',links:['地球','月']},月:{text:'月は地球の唯一の自然衛星。',links:['地球','太陽系']}};
-const gameVersion='0.5.1';
+const gameVersion='0.5.2';
 const RENDER_SLICE_MS=7;
 const ARTICLE_CACHE_LIMIT=8;
 const TITLE_CACHE_LIMIT=2000;
@@ -122,14 +165,17 @@ function availableTitles(titles,seen=new Set()){
 }
 
 const pick=a=>a[Math.floor(Math.random()*a.length)];
-function makeChallenge(kind=useExpanded&&extra.length?'expanded':'curated'){
-  if(kind==='expanded'){
-    const titles=availableTitles(curated.concat(extra));
-    if(titles.length<2)return null;
-    const a=pick(titles), b=pick(titles.filter(t=>t!==a));
-    return {a,b,category:'拡張星図・ジャンル制限なし',kind};
-  }
-  const choices=groupNames.map(name=>[name,availableTitles(groups[name])]).filter(([,titles])=>titles.length>=(level==='easy'?2:1));
+function matchesStarMap(kind,title,info){
+  if(!info||kind==='wikipedia')return true;
+  if(kind==='expanded')return Boolean(starMap?.ids.has(title)&&starMap.ids.get(title)===info.pageId);
+  return curatedGenres.has(title)&&curatedGenres.get(title)===curatedGenres.get(info.title);
+}
+
+function makeChallenge(kind=useExpanded?'expanded':'curated'){
+  const pool=kind==='expanded'?starMap?.groups:groups;
+  if(!pool)return null;
+  const choices=groupNames.map(name=>[name,availableTitles(pool[name].filter(title=>matchesStarMap(kind,title,titleCache.get(title))))])
+    .filter(([,titles])=>titles.length>=(level==='easy'?2:1));
   if(choices.length<(level==='easy'?1:2))return null;
   const [group,starts]=pick(choices);
   const a=pick(starts);
@@ -147,15 +193,15 @@ function showChallenge(){
   $('startName').textContent=a??'—';
   $('goalName').textContent=b??'—';
   $('level').textContent=levels[level].name;
-  $('difficultyDesc').textContent=kind&&kind!=='curated'?
-    (level==='hard'?'本文中のリンクのみ。':'記事本文・リンク一覧を使えます。')+' 拡張・完全ランダムのお題はジャンル制限なし。':
+  $('difficultyDesc').textContent=kind==='wikipedia'?
+    (level==='hard'?'本文中のリンクのみ。':'記事本文・リンク一覧を使えます。')+' 完全ランダムのお題はジャンル制限なし。':
     levels[level].desc+' ※最短距離は未測定。';
   $('poolNote').textContent=poolCount().toLocaleString('ja-JP')+' / 5,000種類・'+(useExpanded?'拡張星図':'厳選 '+curated.length+'語 / '+groupNames.length+'ジャンル')+(category?' ／ '+category:'');
   refreshMode();
   refreshPool();
   $('play').disabled=busy||!challenge;
   document.querySelectorAll('[data-level]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.level===level)));
-  const r=challenge?best(a,b):null;
+  const r=challenge?best(titleCache.get(a)?.title??a,titleCache.get(b)?.title??b):null;
   $('best').textContent=r?'自己ベスト：'+r.moves+'クリック / '+time(r.ms):'自己ベスト：まだありません';
 }
 
@@ -224,7 +270,7 @@ async function lookupTitles(titles,signal){
       if(!page)throw new GameError('network',incomplete);
       const issue=page.invalid?'invalid':page.missing?'missing':page.ns!==0?'invalid':
         Object.hasOwn(page.pageprops??{},'disambiguation')?'disambiguation':null;
-      const result={title,issue};
+      const result={title,issue,pageId:page.pageid};
       results.set(name,result);
       remember(titleCache,name,result,TITLE_CACHE_LIMIT);
       if(!issue&&name!==title)remember(titleCache,title,result,TITLE_CACHE_LIMIT);
@@ -247,7 +293,9 @@ async function chooseRoute(active,signal){
   for(let i=0;i<4;i++){
     const names=candidate?[candidate.a,candidate.b]:[active.start,active.goal];
     const [start,goal]=await lookupTitles(names,signal);
-    if(!start.issue&&!goal.issue&&start.title!==goal.title){
+    const sameArticle=start.title===goal.title||Boolean(start.pageId&&start.pageId===goal.pageId);
+    const withinStarMap=!candidate||(matchesStarMap(candidate.kind,names[0],start)&&matchesStarMap(candidate.kind,names[1],goal));
+    if(!start.issue&&!goal.issue&&!sameArticle&&withinStarMap){
       try{
         const page=await getPage(start.title,false,signal);
         return {start:start.title,goal:goal.title,candidate,page};
@@ -655,7 +703,9 @@ async function load(title,first=false){
     await paintLinks(view,erosionPercent(active),active.seed,signal);
     if(id!==seq||signal.aborted)return;
     if(route){
-      if(route.candidate)challenge={...route.candidate,a:route.start,b:route.goal};
+      if(route.candidate){
+        challenge=route.candidate.kind==='expanded'?route.candidate:{...route.candidate,a:route.start,b:route.goal};
+      }
       active.start=route.start;
       active.goal=route.goal;
     }
@@ -781,8 +831,51 @@ showChallenge();
 
 function finish(){state.end=performance.now();update();$('article').hidden=true;$('win').hidden=false;let r={moves:state.path.length-1,ms:state.end-state.begin};$('result').textContent=r.moves+'クリック ／ '+time(r.ms);$('modeResult').textContent=modeName(state.mode)+'モード'+(state.mode==='blackhole'?' ／ 最終侵食 '+erosionStages[erosionStage(r.ms/1000)][1]+'%':'');let old=best(state.start,state.goal,state.level,state.mode);let improved=!old||r.moves<old.moves||(r.moves===old.moves&&r.ms<old.ms);$('recordMessage').textContent=state.demo?'練習クリア！':improved?(save(state.start,state.goal,r,state.level,state.mode)?'自己ベスト更新！':'自己ベスト相当（端末への保存はできませんでした）'):'おめでとう！ 次は自己ベストを目指そう。';prepareShare()}
 
-async function expandPool(){if(busy||poolCount()>=POOL_TARGET)return;const id=++seq;controller?.abort();controller=new AbortController();const ctrl=controller,signal=ctrl.signal;collecting=true;setBusy(true);$('menuError').textContent='';let known=new Set(curated.concat(extra));let stopped=false;try{for(let i=0;i<30&&known.size<POOL_TARGET;i++){if(signal.aborted)break;$('poolStatus').textContent='星図を取得中… '+known.size.toLocaleString('ja-JP')+' / 5,000';let timeout=setTimeout(()=>ctrl.abort(),25000),d;try{d=await api({action:'query',generator:'random',grnnamespace:'0',grnfilterredir:'nonredirects',grnminsize:'1500',grnlimit:'500',prop:'pageprops',ppprop:'disambiguation'},signal)}finally{clearTimeout(timeout)}if(id!==seq)return;for(const p of (d.query?.pages||[])){if(known.size>=POOL_TARGET)break;if(p.ns!==0||p.missing||p.invalid||p.redirect||p.pageprops&&Object.hasOwn(p.pageprops,'disambiguation')||typeof p.title!=='string')continue;let t=norm(p.title);if(!t||known.has(t)||t.includes('|'))continue;known.add(t);extra.push(t)}try{localStorage.setItem(POOL_KEY,JSON.stringify(extra))}catch{}refreshPool();if(known.size<POOL_TARGET)await new Promise(r=>setTimeout(r,700))}stopped=signal.aborted;$('poolStatus').textContent=stopped?'取得を中止しました。続きから再開できます。':known.size>=POOL_TARGET?'星図5,000語の取得完了！ 次回もこの端末で利用できます。':'一部取得しました。もう一度拡張すると続きから取得できます。'}catch(e){if(id!==seq)return;$('poolStatus').textContent=signal.aborted?'取得を中止、または通信がタイムアウトしました。続きから再開できます。':e.message+' ／ 取得済みの候補は利用できます。'}finally{if(id===seq){collecting=false;setBusy(false);if(extra.length){useExpanded=true;newChallenge()}refreshPool()}}}
-$('expandPool').onclick=expandPool;$('cancelPool').onclick=()=>{controller?.abort();$('poolStatus').textContent='取得を中止しています…'};$('togglePool').onclick=()=>{if(busy)return;useExpanded=!useExpanded;newChallenge()};
+async function expandPool(){
+  if(busy||starMap)return;
+  const id=++seq, request=new AbortController();
+  controller?.abort();
+  controller=request;
+  let timedOut=false;
+  const timeout=setTimeout(()=>{timedOut=true;request.abort()},15000);
+  collecting=true;
+  setBusy(true);
+  $('menuError').textContent='';
+  $('poolStatus').textContent='分類済みの星図を読み込んでいます…';
+  try{
+    const response=await fetch('./star-map.json',{signal:request.signal});
+    if(!response.ok)throw new GameError('map','拡張星図を読み込めませんでした（HTTP '+response.status+'）。再試行してください。');
+    const data=await response.json();
+    if(id!==seq)return;
+    assertActive(request.signal);
+    starMap=readStarMap(data);
+    useExpanded=true;
+    $('poolStatus').textContent='5,000語・16ジャンルの拡張星図を利用できます。';
+    try{localStorage.setItem(STAR_MAP_KEY,String(STAR_MAP_VERSION))}catch{}
+    newChallenge();
+  }catch(error){
+    if(id!==seq)return;
+    $('poolStatus').textContent=timedOut?'拡張星図の読み込みがタイムアウトしました。再試行できます。':
+      request.signal.aborted?'拡張星図の読み込みを中止しました。':
+      error instanceof GameError?error.message:'拡張星図を読み込めませんでした。通信環境を確認して再試行してください。';
+  }finally{
+    clearTimeout(timeout);
+    if(id===seq){
+      collecting=false;
+      setBusy(false);
+    }
+  }
+}
+$('expandPool').onclick=expandPool;
+$('cancelPool').onclick=()=>{
+  controller?.abort();
+  $('poolStatus').textContent='読み込みを中止しています…';
+};
+$('togglePool').onclick=()=>{
+  if(busy||!starMap)return;
+  useExpanded=!useExpanded;
+  newChallenge();
+};
 $('play').onclick=()=>{if(challenge)start(challenge.a,challenge.b,false,level,mode,challenge)};
 $('shuffle').onclick=newChallenge;
 $('randomWiki').onclick=async()=>{
@@ -850,5 +943,7 @@ $('cancelTransit').onclick=()=>{
   showError(new GameError('cancelled','航行を中止しました。再試行するか、他のリンクを選んでください。'));
   updateErosion();
 };
+
+if(restoreExpandedPreference())expandPool();
 
 </script></body></html>
