@@ -14,7 +14,19 @@ body{background:radial-gradient(ellipse at 87% 8%,#193453 0%,transparent 38%),ra
 .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0 8px}.mode-grid button{min-height:76px;text-align:left;padding:12px;border:1px solid #344964;border-radius:12px;background:#0c172a;color:#dceaff;font:inherit;cursor:pointer}.mode-grid button strong,.mode-grid button span{display:block}.mode-grid button strong{font-size:14px}.mode-grid button span{font-size:10px;letter-spacing:.08em;color:#a1b7d2;margin-top:5px}.mode-grid button[aria-pressed=true]{border-color:#8de5ff;background:#17364e;box-shadow:0 0 16px #68ceff15}.mode-grid button[data-mode=blackhole][aria-pressed=true]{border-color:#caa4ff;background:#322149;box-shadow:0 0 20px #bc83ff25}.mode-grid button[data-mode=blackhole] span{color:#d0b7ff}.mode-desc{min-height:2.6em;margin:0 0 18px}.mode-label{margin-top:14px}.pool-control{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}.pool-control button{flex:1;min-width:120px;font-size:12px}.pool-meter{height:4px;border-radius:8px;background:#283c53;overflow:hidden;margin:9px 0}.pool-meter>div{height:100%;background:#92e9ff;width:0%;transition:width .3s}.pool-status{font-size:12px;color:#a9bfd5;margin:5px 0}.erosion{margin:8px 0 3px;padding:7px 10px;background:#211b36;border:1px solid #71539a;border-radius:10px;color:#e2cbff}.erosion-row{display:flex;justify-content:space-between;gap:8px;font-size:11px;font-weight:700}.erosion-track{height:4px;background:#423054;margin-top:5px;border-radius:4px;overflow:hidden}.erosion-track>div{background:linear-gradient(90deg,#8760c4,#e5b8ff);height:100%;width:0%;transition:width .35s}.wiki-link.eroded,.linkchip.eroded{color:#d8b7ff;text-decoration-color:#9e73db}.bh-result{color:#d4b0ff;font-size:13px;font-weight:700;letter-spacing:.04em}.mode-grid button:disabled,.pool-control button:disabled{opacity:.5;cursor:default}
 
 .guide-jump{position:relative;z-index:1;display:inline-flex;align-items:center;min-height:38px;font-size:13px;color:#a5eaff;text-underline-offset:4px}.flight-guide{scroll-margin-top:18px}.flight-guide h2{font-size:clamp(24px,5vw,34px);letter-spacing:-.04em;line-height:1.35;margin:10px 0 14px;color:#e8f4ff}.flight-guide h3{font-size:15px;color:#9ae7fb;margin:23px 0 10px;padding-top:17px;border-top:1px solid #31445f;letter-spacing:.02em}.flight-guide>p:not(.muted):not(.guide-tip){color:#d0deee;font-size:14px}.guide-route{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0 5px}.guide-route span{border:1px solid #3e627e;background:#142a42;color:#bdeeff;border-radius:7px;padding:5px 9px;font-size:13px}.guide-route b{color:#83b4d4;font-weight:400}.guide-steps{padding:0;margin:0;list-style:none;counter-reset:guide-step}.guide-steps li{position:relative;padding-left:35px;margin:12px 0;counter-increment:guide-step}.guide-steps li:before{content:counter(guide-step);position:absolute;left:0;top:2px;width:24px;height:24px;display:grid;place-items:center;border:1px solid #4d7591;border-radius:50%;color:#a5eaff;background:#142a42;font-size:12px;font-weight:700}.guide-steps strong,.guide-steps span{display:block}.guide-steps strong{font-size:14px;color:#e7f4ff}.guide-steps span,.guide-rules,.guide-levels dd{font-size:13px;color:#b9cbe0}.guide-modes{display:grid;grid-template-columns:1fr 1fr;gap:10px}.guide-modes>div{padding:13px;border:1px solid #426783;border-radius:12px;background:#102139}.guide-modes>div.guide-blackhole{background:#211b36;border-color:#71539a}.guide-modes strong{display:block;color:#baf5ff;font-size:15px}.guide-modes .guide-blackhole strong{color:#dfc5ff}.guide-modes small{display:block;color:#a4b9d0;letter-spacing:.1em;font-size:10px;margin:2px 0 10px}.guide-modes p{font-size:13px;color:#cad8e9;margin:0}.guide-mask{margin-top:10px;font-size:12px;color:#d8b7ff;overflow-wrap:anywhere}.guide-stages{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:9px}.guide-stages span{font-size:11px;color:#e0caff;background:#49345f66;border-radius:5px;text-align:center;padding:3px}.guide-levels{margin:0 0 10px}.guide-levels>div{display:grid;grid-template-columns:100px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #273b51}.guide-levels dt{font-size:13px;font-weight:700;color:#e6f0ff}.guide-levels dd{margin:0}.guide-rules{padding-left:19px;margin:0 0 14px}.guide-rules li{margin:5px 0}.guide-tip{padding:12px;border-radius:10px;border:1px solid #3a6883;background:#132d44;color:#c4e7f6;font-size:13px;margin:15px 0}.guide-demo-note{margin:8px 0 0}.guide-jump:focus-visible{outline:2px solid #8ee7fc;outline-offset:3px}@media(max-width:520px){.guide-modes{grid-template-columns:1fr}.guide-levels>div{grid-template-columns:88px 1fr}.flight-guide h2{font-size:24px}}
-</style></head><body><div class="starfield" aria-hidden="true"></div><div class="wrap"><header><div class="brand"><span class="mark" aria-hidden="true">✦</span> Wiki Race <span class="tag">STELLAR VOYAGE</span></div><button id="home" class="pill" hidden>トップへ</button><span id="version" class="pill">BETA 05</span></header>
+/* v0.5.1 */
+#home,#restart,#cancelTransit,#retry,#errorHome,.tabs button,.share-options button,.linkchip{min-width:44px;min-height:44px}
+#home,#restart{flex:none;white-space:nowrap}
+#restart{padding-inline:8px}
+.difficulty button{min-height:44px}
+.linkchip{max-width:100%;overflow-wrap:anywhere}
+#error{scroll-margin-top:185px}
+#linkPanel .links{display:block}
+.link-batch{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;content-visibility:auto;contain-intrinsic-size:auto 220px}
+.article-section{content-visibility:auto;contain-intrinsic-size:auto 320px}
+.article-section:first-child{content-visibility:visible}
+@media(max-width:520px){#error{scroll-margin-top:230px}.topline{gap:4px}.link-batch{contain-intrinsic-size:auto 560px}.article-section{contain-intrinsic-size:auto 460px}}
+</style></head><body><div class="starfield" aria-hidden="true"></div><div class="wrap"><header><div class="brand"><span class="mark" aria-hidden="true">✦</span> Wiki Race <span class="tag">STELLAR VOYAGE</span></div><button id="home" class="pill" hidden>トップへ</button><span id="version" class="pill">Ver.0.5.1</span></header>
 <main id="menu"><section class="hero"><svg class="constellation" viewBox="0 0 420 250" fill="none" aria-hidden="true"><ellipse cx="265" cy="125" rx="145" ry="73" transform="rotate(-26 265 125)" stroke="#477390" stroke-dasharray="3 8"/><ellipse cx="265" cy="125" rx="105" ry="105" stroke="#345a78"/><path d="M68 187L135 118 222 154 270 65 340 92 387 27M135 118L176 36 270 65M222 154L310 211 340 92" stroke="#85cce7" stroke-width="1.2"/><g fill="#c7f5ff"><circle cx="68" cy="187" r="3"/><circle cx="135" cy="118" r="4"/><circle cx="176" cy="36" r="3"/><circle cx="222" cy="154" r="4"/><circle cx="270" cy="65" r="5"/><circle cx="340" cy="92" r="3"/><circle cx="310" cy="211" r="3"/><circle cx="387" cy="27" r="4"/></g><path d="M270 49v32m-16-16h32" stroke="#c7f5ff" stroke-width="1"/></svg><div class="eyebrow">✦ &nbsp; THE KNOWLEDGE GALAXY</div><h1>知識を巡る、<br><em>星空の航路。</em></h1><p>ひとつの記事は、ひとつの星。Wikipediaのリンクをたどり、目的の星へたどり着こう。</p><a class="guide-jump" href="#guide">初めての方へ・遊び方 ↓</a></section><section class="card"><div class="topline"><div class="eyebrow">FLIGHT PLAN</div><span id="level" class="pill"></span></div><div class="mode-label eyebrow">GAME MODE / 航行モード</div><div class="mode-grid" role="group" aria-label="ゲームモード"><button data-mode="classic" aria-pressed="true"><strong>✦ 通常モード</strong><span>CLASSIC RACE</span></button><button data-mode="blackhole" aria-pressed="false"><strong>◉ ブラックホール</strong><span>BLACK HOLE</span></button></div><p class="muted mode-desc" id="modeDesc"></p><div class="eyebrow mode-label">DIFFICULTY / 難易度</div><div class="difficulty" role="group" aria-label="難易度"><button data-level="easy" aria-pressed="true">かんたん</button><button data-level="normal" aria-pressed="false">ふつう</button><button data-level="hard" aria-pressed="false">むずかしい</button></div><p id="difficultyDesc" class="muted"></p><div class="route"><div class="start"><span class="small">START</span><strong id="startName"></strong></div><span class="route-arrow" aria-hidden="true">⟶</span><div class="goal"><span class="small">GOAL</span><strong id="goalName"></strong></div></div><div class="actions"><button id="play" class="primary">航海開始 →</button><button id="shuffle" class="secondary">別のお題 ↻</button></div><p id="best" class="record" style="margin:12px 0 0"></p><p id="poolNote" class="pool-note"></p><div class="pool-control"><button class="secondary" id="expandPool">星図を5,000語に拡張 ↗</button><button class="secondary" id="togglePool" hidden>厳選のお題に切替</button><button class="secondary" id="cancelPool" hidden>取得を中止</button></div><div class="pool-meter" id="poolMeter" hidden><div id="poolProgress"></div></div><p class="pool-status" id="poolStatus" role="status"></p><button id="randomWiki" class="secondary full">Wikipediaから完全ランダムなお題 ↗</button><p id="menuStatus" class="menu-status" role="status" hidden></p><div id="menuError" class="error" role="alert"></div><p class="source-note">● 本番モード：日本語版Wikipedia APIから記事を取得</p></section><section class="card flight-guide" id="guide" aria-labelledby="guide-title">
 <div class="eyebrow">✦ &nbsp; FLIGHT GUIDE / 航海ガイド</div>
 <h2 id="guide-title">知識の宇宙を、旅しよう。</h2>
@@ -34,12 +46,29 @@ body{background:radial-gradient(ellipse at 87% 8%,#193453 0%,transparent 38%),ra
 <button class="secondary full" id="demo">通信なしで遊べる練習モード</button>
 <p class="muted guide-demo-note">練習モードは独自の短い記事を使って、遊び方を試せます。</p>
 </section><details class="card"><summary style="cursor:pointer;font-weight:700">自分でお題を設定</summary><div class="grid"><label class="muted">スタート<input id="customStart" class="select" placeholder="例：富士山" maxlength="150"></label><label class="muted">ゴール<input id="customGoal" class="select" placeholder="例：宇宙" maxlength="150"></label></div><button id="custom" class="primary full">このお題で開始</button><p id="customError" class="error" role="alert"></p></details></main>
-<main id="game" hidden><div class="hud" id="hud"><div class="hud-info" id="hudInfo"></div><div class="stats"><div class="stat"><span class="small">TIME</span><strong id="timer">00:00</strong></div><div class="stat"><span class="small">CLICKS</span><strong id="moves">0</strong></div><div class="stat target"><span class="small">GOAL</span><strong id="target"></strong></div></div><div class="erosion" id="erosion" hidden><div class="erosion-row"><span>◉ BLACK HOLE <span id="erosionPercent">0%</span></span><span id="erosionNext"></span></div><div class="erosion-track"><div id="erosionBar"></div></div></div><div id="trail" class="trail" aria-label="移動履歴（横にスクロールできます）" tabindex="0"></div></div><div id="win" class="card win" hidden><div class="eyebrow">✦ &nbsp; MISSION COMPLETE</div><h2>ゴール到達！</h2><p class="score" id="result"></p><p id="modeResult" class="bh-result"></p><p id="recordMessage"></p><div class="actions"><button id="share" class="primary">結果をシェア</button><button id="again" class="secondary">もう一度</button></div><div class="share-options"><button id="saveImage" disabled>結果画像を保存</button><button id="copyResult">結果・URLをコピー</button></div><img id="resultPreview" class="result-preview" alt="共有用のクリア結果カード" hidden><p aria-live="polite" class="muted" id="shareMsg"></p></div><section class="card article" id="article"><div class="topline"><span id="articleMode" class="eyebrow">CURRENT ARTICLE</span><button id="restart" class="inline">最初から</button></div><h2 id="articleTitle"></h2><div id="tabs" class="tabs"><button id="tabText" class="active" aria-pressed="true">記事を読む</button><button id="tabLinks" aria-pressed="false">リンク一覧 <span id="count"></span></button></div><div id="status" class="loading" role="status" hidden></div><div id="error" class="error" role="alert" hidden></div><button id="retry" class="secondary" hidden>再試行</button><div id="articleText"></div><div id="linkPanel" hidden><p class="muted">現在の記事に含まれる移動可能なリンク</p><div id="links" class="links"></div></div><div id="credit" class="muted" style="margin-top:18px"></div></section></main><footer class="footer">Wiki Race は非公式のファン制作ゲームです。Wikipediaとは提携していません。記事の出典：<a href="https://ja.wikipedia.org/" target="_blank" rel="noopener noreferrer">日本語版Wikipedia</a> ／ <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>（記事の本文を表示用に整形）。練習モードの文章は独自作成です。</footer></div>
+<main id="game" hidden><div class="hud" id="hud"><div class="hud-info" id="hudInfo"></div><div class="stats"><div class="stat"><span class="small">TIME</span><strong id="timer">00:00</strong></div><div class="stat"><span class="small">CLICKS</span><strong id="moves">0</strong></div><div class="stat target"><span class="small">GOAL</span><strong id="target"></strong></div></div><div class="erosion" id="erosion" hidden><div class="erosion-row"><span>◉ BLACK HOLE <span id="erosionPercent">0%</span></span><span id="erosionNext"></span></div><div class="erosion-track"><div id="erosionBar"></div></div></div><div id="trail" class="trail" aria-label="移動履歴（横にスクロールできます）" tabindex="0"></div></div><div id="win" class="card win" hidden><div class="eyebrow">✦ &nbsp; MISSION COMPLETE</div><h2>ゴール到達！</h2><p class="score" id="result"></p><p id="modeResult" class="bh-result"></p><p id="recordMessage"></p><div class="actions"><button id="share" class="primary">結果をシェア</button><button id="again" class="secondary">もう一度</button></div><div class="share-options"><button id="saveImage" disabled>結果画像を保存</button><button id="copyResult">結果・URLをコピー</button></div><img id="resultPreview" class="result-preview" alt="共有用のクリア結果カード" hidden><p aria-live="polite" class="muted" id="shareMsg"></p></div><section class="card article" id="article"><div class="topline"><span id="articleMode" class="eyebrow">CURRENT ARTICLE</span><button id="restart" class="inline">最初から</button></div><h2 id="articleTitle"></h2><div id="tabs" class="tabs"><button id="tabText" class="active" aria-pressed="true">記事を読む</button><button id="tabLinks" aria-pressed="false">リンク一覧 <span id="count"></span></button></div><div id="status" class="loading" role="status" hidden></div><div id="error" class="error" role="alert" hidden></div><button id="retry" class="secondary" hidden>再試行</button><button id="errorHome" class="secondary" hidden>トップへ戻る</button><div id="articleText"></div><div id="linkPanel" hidden><p class="muted">現在の記事に含まれる移動可能なリンク</p><div id="links" class="links"></div></div><div id="credit" class="muted" style="margin-top:18px"></div></section></main><footer class="footer">Wiki Race は非公式のファン制作ゲームです。Wikipediaとは提携していません。記事の出典：<a href="https://ja.wikipedia.org/" target="_blank" rel="noopener noreferrer">日本語版Wikipedia</a> ／ <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>（記事の本文を表示用に整形）。練習モードの文章は独自作成です。</footer></div>
 <div id="transit" class="transit" role="status" aria-live="polite" hidden><div class="transit-panel"><div class="orbit" aria-hidden="true"><span class="orbit-core">✦</span></div><div class="eyebrow">HYPERSPACE TRANSIT</div><div class="transit-title" id="transitTitle"></div><p class="muted" id="transitText">次の星へ航行中…</p><div class="transit-track" aria-hidden="true"></div><p class="muted">記事を読み込んでいます</p><button class="secondary" id="cancelTransit">航行を中止</button></div></div><script>
 'use strict';
 const $=id=>document.getElementById(id);
-const groups={"動物":["ネコ","イヌ","ライオン","トラ","ヒョウ","チーター","ゾウ","キリン","シマウマ","カバ","サイ","パンダ","コアラ","カンガルー","ゴリラ","チンパンジー","ウマ","ウシ","ブタ","ヒツジ","ヤギ","ウサギ","ハムスター","キツネ","タヌキ","オオカミ","クマ","シカ","イノシシ","リス","イルカ","クジラ","シャチ","アザラシ","ペンギン","ワシ","フクロウ","カラス","スズメ","ニワトリ","ダチョウ","ワニ","カメ","ヘビ","カエル","サンショウウオ","サメ","マグロ","タコ","イカ","クラゲ","チョウ","カブトムシ","クワガタムシ","ハチ","アリ","ホタル"],"植物・自然":["サクラ","ウメ","ヒマワリ","バラ","チューリップ","アジサイ","スギ","マツ","タケ","イネ","コムギ","トウモロコシ","ダイズ","リンゴ","ミカン","バナナ","イチゴ","ブドウ","モモ","スイカ","キノコ","森林","砂漠","熱帯雨林","火山","地震","津波","台風","雷","雪","虹","雲","海","川","湖","滝","氷河","サンゴ礁"],"宇宙":["宇宙","太陽系","太陽","地球","月","水星","金星","火星","木星","土星","天王星","海王星","冥王星","小惑星","彗星","隕石","銀河","天の川銀河","ブラックホール","中性子星","超新星","星座","天体望遠鏡","宇宙飛行士","国際宇宙ステーション","アポロ11号","はやぶさ2","ハッブル宇宙望遠鏡","ジェイムズ・ウェッブ宇宙望遠鏡","ビッグバン"],"科学":["物理学","化学","生物学","数学","天文学","地質学","遺伝学","進化","細胞","DNA","RNA","タンパク質","光","電気","磁気","重力","音","波","電子","原子","分子","水","酸素","水素","炭素","窒素","鉄","金","銀","銅","ダイヤモンド","放射線","相対性理論","量子力学","熱力学","光合成","免疫","ワクチン","抗生物質"],"日本の地理":["日本","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県","富士山","琵琶湖","瀬戸内海","東京タワー","東京スカイツリー","札幌市","横浜市","京都市","大阪市","神戸市","福岡市","那覇市","四国","中央アルプス"],"世界の地理":["アジア","ヨーロッパ","アフリカ","北アメリカ","南アメリカ","南極大陸","オーストラリア","アメリカ合衆国","カナダ","メキシコ","ブラジル","アルゼンチン","イギリス","フランス","ドイツ","イタリア","スペイン","ポルトガル","ギリシャ","エジプト","インド","中華人民共和国","大韓民国","タイ","ベトナム","インドネシア","フィリピン","シンガポール","ニュージーランド","ロンドン","パリ","ローマ","ニューヨーク","ロサンゼルス","北京","ソウル","バンコク","エベレスト","ヒマラヤ山脈","ナイル川","アマゾン川","サハラ砂漠","太平洋","大西洋","インド洋"],"日本史":["縄文時代","弥生時代","古墳時代","飛鳥時代","奈良時代","平安時代","鎌倉時代","室町時代","戦国時代","江戸時代","明治時代","大正時代","昭和時代","平成","令和","聖徳太子","紫式部","清少納言","源頼朝","源義経","足利尊氏","織田信長","豊臣秀吉","徳川家康","武田信玄","上杉謙信","伊達政宗","真田信繁","坂本龍馬","西郷隆盛","大久保利通","福沢諭吉","伊藤博文","明治維新","関ヶ原の戦い","江戸幕府","鎌倉幕府","新選組"],"世界史":["古代エジプト","古代ギリシア","ローマ帝国","ビザンツ帝国","モンゴル帝国","オスマン帝国","ルネサンス","大航海時代","産業革命","フランス革命","アメリカ独立戦争","第一次世界大戦","第二次世界大戦","冷戦","万里の長城","ピラミッド","コロッセオ","アレクサンドロス3世","ユリウス・カエサル","クレオパトラ7世","チンギス・カン","ナポレオン・ボナパルト","ジャンヌ・ダルク","クリストファー・コロンブス","マルコ・ポーロ","ガリレオ・ガリレイ","アイザック・ニュートン","アルベルト・アインシュタイン","チャールズ・ダーウィン","マリー・キュリー"],"食べ物":["ラーメン","うどん","蕎麦","寿司","天ぷら","おにぎり","味噌汁","カレーライス","牛丼","焼肉","焼き鳥","唐揚げ","お好み焼き","たこ焼き","餃子","麻婆豆腐","ピザ","パスタ","ハンバーガー","サンドイッチ","ステーキ","パン","ケーキ","プリン","アイスクリーム","チョコレート","クッキー","ドーナツ","コーヒー","紅茶","緑茶","牛乳","チーズ","ヨーグルト","バター","豆腐","納豆","味噌","醤油","砂糖","塩","胡椒","オリーブ・オイル"],"スポーツ":["野球","サッカー","バスケットボール","バレーボール","テニス","卓球","バドミントン","ラグビー","アメリカンフットボール","ゴルフ","ボクシング","柔道","剣道","空手道","相撲","レスリング","水泳","陸上競技","マラソン","体操競技","フィギュアスケート","スキー","スノーボード","スケートボード","サーフィン","自転車競技","ウエイトリフティング","パワーリフティング","ベンチプレス","スクワット","デッドリフト","オリンピック","FIFAワールドカップ","メジャーリーグベースボール","大谷翔平","イチロー","マイケル・ジョーダン","リオネル・メッシ","クリスティアーノ・ロナウド","ウサイン・ボルト"],"乗り物・技術":["自動車","オートバイ","自転車","鉄道","新幹線","蒸気機関車","電車","飛行機","ヘリコプター","船舶","潜水艦","ロケット","人工衛星","エレベーター","エスカレーター","エンジン","電動機","発電機","電池","リチウムイオン二次電池","太陽電池","風力発電","原子力発電","半導体","トランジスタ","集積回路","コンピュータ","スマートフォン","インターネット","World Wide Web","Wi-Fi","Bluetooth","人工知能","ロボット","3Dプリンター","GPS","テレビ","ラジオ","カメラ","電子レンジ","冷蔵庫","洗濯機"],"音楽・芸術":["音楽","ピアノ","ギター","ヴァイオリン","チェロ","フルート","トランペット","サクソフォーン","ドラムセット","オルガン","オーケストラ","交響曲","オペラ","ジャズ","ロック","ヒップホップ","クラシック音楽","ヴォルフガング・アマデウス・モーツァルト","ルートヴィヒ・ヴァン・ベートーヴェン","ヨハン・ゼバスティアン・バッハ","フレデリック・ショパン","絵画","彫刻","写真","映画","アニメーション","漫画","浮世絵","葛飾北斎","歌川広重","レオナルド・ダ・ヴィンチ","ミケランジェロ","フィンセント・ファン・ゴッホ","パブロ・ピカソ","モナ・リザ"],"文化・ゲーム":["将棋","囲碁","チェス","トランプ","麻雀","オセロ","ルービックキューブ","ジグソーパズル","折り紙","茶道","華道","歌舞伎","能","落語","俳句","短歌","温泉","神社","寺院","クリスマス","ハロウィン","正月","ひな祭り","七夕","花火","ポケットモンスター","スーパーマリオブラザーズ","ゼルダの伝説","ドラゴンクエスト","ファイナルファンタジー","Minecraft","テトリス","パックマン","ゲームボーイ","Nintendo Switch","PlayStation 5"],"人体・医学":["人体","心臓","脳","肺","肝臓","腎臓","胃","小腸","大腸","皮膚","骨","筋肉","血液","神経","眼","耳","歯","舌","鼻","脊髄","赤血球","白血球","血小板","ビタミン","ホルモン","インスリン","アドレナリン","睡眠","夢","記憶","運動","栄養","医学","外科学","小児科学","歯科学","聴覚","視覚","味覚","嗅覚"],"建築・名所":["建築","橋","トンネル","ダム","城","塔","灯台","教会","モスク","皇居","姫路城","大阪城","名古屋城","松本城","金閣寺","清水寺","東大寺","厳島神社","法隆寺","日光東照宮","東京駅","エッフェル塔","凱旋門","自由の女神像","ビッグ・ベン","タージ・マハル","アンコール・ワット","マチュ・ピチュ","サグラダ・ファミリア","ブルジュ・ハリファ","シドニー・オペラハウス"],"恐竜・古生物":["恐竜","ティラノサウルス","トリケラトプス","ステゴサウルス","ブラキオサウルス","アロサウルス","ヴェロキラプトル","スピノサウルス","アンキロサウルス","ディプロドクス","イグアノドン","プテラノドン","始祖鳥","モササウルス","アンモナイト","三葉虫","マンモス","メガロドン","化石","古生物学","ジュラ紀","白亜紀","三畳紀","カンブリア紀","中生代","古生代","新生代","大量絶滅"]};
-const groupNames=Object.keys(groups), totalWords=Object.values(groups).flat().length;
+const groups={
+  "動物":["ネコ","イヌ","ライオン","トラ","ヒョウ","チーター","ゾウ","キリン","シマウマ","カバ","サイ","パンダ","コアラ","カンガルー","ゴリラ","チンパンジー","ウマ","ウシ","ブタ","ヒツジ","ヤギ","ウサギ","ハムスター","キツネ","タヌキ","オオカミ","クマ","シカ","イノシシ","リス","イルカ","クジラ","シャチ","アザラシ","ペンギン","鷲","フクロウ","カラス","スズメ","ニワトリ","ダチョウ","ワニ","カメ","ヘビ","カエル","サンショウウオ","サメ","マグロ","タコ","イカ","クラゲ","チョウ","カブトムシ","クワガタムシ","ハチ","アリ","ホタル"],
+  "植物・自然":["サクラ","ウメ","ヒマワリ","バラ","チューリップ","アジサイ","スギ","マツ","竹","イネ","コムギ","トウモロコシ","ダイズ","リンゴ","ウンシュウミカン","バナナ","イチゴ","ブドウ","モモ","スイカ","キノコ","森林","砂漠","熱帯雨林","火山","地震","津波","台風","雷","雪","虹","雲","海","川","湖","滝","氷河","サンゴ礁"],
+  "宇宙":["宇宙","太陽系","太陽","地球","月","水星","金星","火星","木星","土星","天王星","海王星","冥王星","小惑星","彗星","隕石","銀河","銀河系","ブラックホール","中性子星","超新星","星座","天体望遠鏡","宇宙飛行士","国際宇宙ステーション","アポロ11号","はやぶさ2","ハッブル宇宙望遠鏡","ジェイムズ・ウェッブ宇宙望遠鏡","ビッグバン"],
+  "科学":["物理学","化学","生物学","数学","天文学","地質学","遺伝学","進化","細胞","デオキシリボ核酸","リボ核酸","タンパク質","光","電気","磁性","重力","音","波","電子","原子","分子","水","酸素","水素","炭素","窒素","鉄","金","銀","銅","ダイヤモンド","放射線","相対性理論","量子力学","熱力学","光合成","免疫系","ワクチン","抗生物質"],
+  "日本の地理":["日本","北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県","茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県","新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県","三重県","滋賀県","京都府","大阪府","兵庫県","奈良県","和歌山県","鳥取県","島根県","岡山県","広島県","山口県","徳島県","香川県","愛媛県","高知県","福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県","富士山","琵琶湖","瀬戸内海","東京タワー","東京スカイツリー","札幌市","横浜市","京都市","大阪市","神戸市","福岡市","那覇市","四国","木曽山脈"],
+  "世界の地理":["アジア","ヨーロッパ","アフリカ","北アメリカ","南アメリカ","南極大陸","オーストラリア","アメリカ合衆国","カナダ","メキシコ","ブラジル","アルゼンチン","イギリス","フランス","ドイツ","イタリア","スペイン","ポルトガル","ギリシャ","エジプト","インド","中華人民共和国","大韓民国","タイ王国","ベトナム","インドネシア","フィリピン","シンガポール","ニュージーランド","ロンドン","パリ","ローマ","ニューヨーク","ロサンゼルス","北京市","ソウル特別市","バンコク","エベレスト","ヒマラヤ山脈","ナイル川","アマゾン川","サハラ砂漠","太平洋","大西洋","インド洋"],
+  "日本史":["縄文時代","弥生時代","古墳時代","飛鳥時代","奈良時代","平安時代","鎌倉時代","室町時代","戦国時代 (日本)","江戸時代","明治","大正","昭和","平成","令和","聖徳太子","紫式部","清少納言","源頼朝","源義経","足利尊氏","織田信長","豊臣秀吉","徳川家康","武田信玄","上杉謙信","伊達政宗","真田信繁","坂本龍馬","西郷隆盛","大久保利通","福澤諭吉","伊藤博文","明治維新","関ヶ原の戦い","江戸幕府","鎌倉幕府","新選組"],
+  "世界史":["古代エジプト","古代ギリシア","ローマ帝国","東ローマ帝国","モンゴル帝国","オスマン帝国","ルネサンス","大航海時代","産業革命","フランス革命","アメリカ独立戦争","第一次世界大戦","第二次世界大戦","冷戦","万里の長城","ピラミッド","コロッセオ","アレクサンドロス3世","ガイウス・ユリウス・カエサル","クレオパトラ7世","チンギス・カン","ナポレオン・ボナパルト","ジャンヌ・ダルク","クリストファー・コロンブス","マルコ・ポーロ","ガリレオ・ガリレイ","アイザック・ニュートン","アルベルト・アインシュタイン","チャールズ・ダーウィン","マリ・キュリー"],
+  "食べ物":["ラーメン","うどん","蕎麦","寿司","天ぷら","おにぎり","味噌汁","カレーライス","牛丼","焼肉","焼き鳥","から揚げ","お好み焼き","たこ焼き","餃子","麻婆豆腐","ピザ","パスタ","ハンバーガー","サンドイッチ","ステーキ","パン","ケーキ","カスタードプディング","アイスクリーム","チョコレート","クッキー","ドーナツ","コーヒー","紅茶","緑茶","牛乳","チーズ","ヨーグルト","バター","豆腐","納豆","味噌","醤油","砂糖","塩","コショウ","オリーブ・オイル"],
+  "スポーツ":["野球","サッカー","バスケットボール","バレーボール","テニス","卓球","バドミントン","ラグビーフットボール","アメリカンフットボール","ゴルフ","ボクシング","柔道","剣道","空手道","相撲","レスリング","水泳","陸上競技","マラソン","体操競技","フィギュアスケート","スキー","スノーボード","スケートボード","サーフィン","自転車競技","重量挙げ","パワーリフティング","ベンチプレス","スクワット","デッドリフト","近代オリンピック","FIFAワールドカップ","メジャーリーグベースボール","大谷翔平","イチロー","マイケル・ジョーダン","リオネル・メッシ","クリスティアーノ・ロナウド","ウサイン・ボルト"],
+  "乗り物・技術":["自動車","オートバイ","自転車","鉄道","新幹線","蒸気機関車","電車","飛行機","ヘリコプター","船","潜水艦","ロケット","人工衛星","エレベーター","エスカレーター","原動機","電動機","発電機","電池","リチウムイオン二次電池","太陽電池","風力発電","原子力発電","半導体","トランジスタ","集積回路","コンピュータ","スマートフォン","インターネット","World Wide Web","Wi-Fi","Bluetooth","人工知能","ロボット","3Dプリンター","グローバル・ポジショニング・システム","テレビ","ラジオ","カメラ","電子レンジ","冷蔵庫","洗濯機"],
+  "音楽・芸術":["音楽","ピアノ","ギター","ヴァイオリン","チェロ","フルート","トランペット","サクソフォーン","ドラムセット","オルガン","オーケストラ","交響曲","オペラ","ジャズ","ロック (音楽)","ヒップホップ","クラシック音楽","ヴォルフガング・アマデウス・モーツァルト","ルートヴィヒ・ヴァン・ベートーヴェン","ヨハン・ゼバスティアン・バッハ","フレデリック・ショパン","絵画","彫刻","写真","映画","アニメーション","漫画","浮世絵","葛飾北斎","歌川広重","レオナルド・ダ・ヴィンチ","ミケランジェロ・ブオナローティ","フィンセント・ファン・ゴッホ","パブロ・ピカソ","モナ・リザ"],
+  "文化・ゲーム":["将棋","囲碁","チェス","トランプ","麻雀","オセロ (ボードゲーム)","ルービックキューブ","ジグソーパズル","折り紙","茶道","華道","歌舞伎","能","落語","俳句","短歌","温泉","神社","寺院","クリスマス","ハロウィン","正月","雛祭り","七夕","花火","ポケットモンスター","スーパーマリオブラザーズ","ゼルダの伝説","ドラゴンクエスト","ファイナルファンタジー","Minecraft","テトリス","パックマン","ゲームボーイ","Nintendo Switch","PlayStation 5"],
+  "人体・医学":["人体","心臓","脳","肺","肝臓","腎臓","胃","小腸","大腸","皮膚","骨","筋肉","血液","神経","目","耳","歯","舌","鼻","脊髄","赤血球","白血球","血小板","ビタミン","ホルモン","インスリン","アドレナリン","睡眠","夢","記憶","運動療法","栄養","医学","外科学","小児科学","歯学","聴覚","視覚","味覚","嗅覚"],
+  "建築・名所":["建築","橋","トンネル","ダム","城","塔","灯台","教会","モスク","皇居","姫路城","大坂城","名古屋城","松本城","鹿苑寺","清水寺","東大寺","厳島神社","法隆寺","日光東照宮","東京駅","エッフェル塔","凱旋門","自由の女神像","ビッグ・ベン","タージ・マハル","アンコール・ワット","マチュ・ピチュ","サグラダ・ファミリア","ブルジュ・ハリファ","シドニー・オペラハウス"],
+  "恐竜・古生物":["恐竜","ティラノサウルス","トリケラトプス","ステゴサウルス","ブラキオサウルス","アロサウルス","ヴェロキラプトル","スピノサウルス","アンキロサウルス","ディプロドクス","イグアノドン","プテラノドン","始祖鳥","モササウルス","アンモナイト","三葉虫","マンモス","メガロドン","化石","古生物学","ジュラ紀","白亜紀","三畳紀","カンブリア紀","中生代","古生代","新生代","大量絶滅"]
+};
+const groupNames=Object.keys(groups);
 const levels={easy:{name:'かんたん',desc:'同じジャンルから出題。記事本文・リンク一覧を使えます。'},normal:{name:'ふつう',desc:'異なるジャンルから出題。記事本文・リンク一覧を使えます。'},hard:{name:'むずかしい',desc:'異なるジャンルから出題。本文中のリンクのみ使用できます。'}};
 let level='easy', challenge=null, mode='classic';
 const modes={classic:{name:'通常',desc:'時間とクリック数を競う通常の航海。リンクは最後まで読めます。'},blackhole:{name:'ブラックホール',desc:'20秒後からリンクの文字が徐々に消失。本文の普通の文字は残り、隠れたリンクも押せます。'}};
@@ -52,46 +81,750 @@ function refreshPool(){const n=poolCount();$('expandPool').textContent=n>=POOL_T
 function modeName(m){return modes[m].name}
 function refreshMode(){document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));$('modeDesc').textContent=modes[mode].desc}
 
-const pick=a=>a[Math.floor(Math.random()*a.length)];
-function makeChallenge(){if(useExpanded&&extra.length){let all=curated.concat(extra);let a=pick(all),b=pick(all.filter(t=>t!==a));return {a,b,category:'拡張星図・ジャンル制限なし',random:true}}let a=pick(groupNames),b=level==='easy'?a:pick(groupNames.filter(x=>x!==a));let first=pick(groups[a]),second=pick(groups[b].filter(x=>x!==first));return {a:first,b:second,category:a===b?a:a+' → '+b,random:false}}
 const demoData={猫:{text:'猫は人間と暮らす身近な動物。イエネコは哺乳類で、狩りを得意とする。',links:['動物','哺乳類','人間']},動物:{text:'動物は地球上に暮らす生物の一群。',links:['地球','生物','哺乳類']},哺乳類:{text:'哺乳類には猫や人間などが含まれる。',links:['猫','人間','動物']},人間:{text:'人間はさまざまな地域に暮らし、宇宙にも進出している。',links:['地球','宇宙飛行士','動物']},地球:{text:'地球は太陽系の惑星で、衛星に月を持つ。',links:['太陽系','月','生物']},生物:{text:'生物は地球上の多様な環境に存在する。',links:['地球','動物']},宇宙飛行士:{text:'宇宙飛行士は宇宙で活動する人。月を訪れた人もいる。',links:['月','人間','地球']},太陽系:{text:'太陽系には地球などの惑星とその衛星がある。',links:['地球','月']},月:{text:'月は地球の唯一の自然衛星。',links:['地球','太陽系']}};
-let state=null, seq=0, controller=null, pending=null, busy=false; const cache=new Map();
+const gameVersion='0.5.1';
+const RENDER_SLICE_MS=7;
+const ARTICLE_CACHE_LIMIT=8;
+const TITLE_CACHE_LIMIT=2000;
+const titleCache=new Map();
+const cache=new Map();
+let state=null, seq=0, controller=null, pending=null, busy=false;
+let linkJob=null, erosionJob=null;
+
+class GameError extends Error {
+  constructor(kind,message){
+    super(message);
+    this.kind=kind;
+  }
+}
+
 function norm(s){return s.trim().replace(/_/g,' ').normalize('NFC')}
 function key(a,b,l=level,m=mode){return m==='classic'?'wikirace:v2:'+JSON.stringify([a,b,l]):'wikirace:v4:blackhole:'+JSON.stringify([a,b,l])}
 function best(a,b,l=level,m=mode){try{return JSON.parse(localStorage.getItem(key(a,b,l,m))||'null')}catch{return null}}
 function save(a,b,r,l=level,m=mode){try{localStorage.setItem(key(a,b,l,m),JSON.stringify(r));return true}catch{return false}}
 function time(ms){let s=Math.max(0,Math.floor(ms/1000));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
-function showChallenge(){if(!challenge)challenge=makeChallenge();let {a,b,category}=challenge;$('startName').textContent=a;$('goalName').textContent=b;$('level').textContent=levels[level].name;$('difficultyDesc').textContent=challenge.random?(level==='hard'?'本文中のリンクのみ。':'記事本文・リンク一覧を使えます。')+' 拡張・完全ランダムのお題はジャンル制限なし。':levels[level].desc+' ※最短距離は未測定。';$('poolNote').textContent=poolCount().toLocaleString('ja-JP')+' / 5,000種類・'+(useExpanded?'拡張星図':'厳選 '+curated.length+'語 / '+groupNames.length+'ジャンル')+' ／ '+category;refreshMode();refreshPool();document.querySelectorAll('[data-level]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.level===level)));let r=best(a,b);$('best').textContent=r?'自己ベスト：'+r.moves+'クリック / '+time(r.ms):'自己ベスト：まだありません'}
-function newChallenge(){let prev=challenge;do{challenge=makeChallenge()}while(prev&&prev.a===challenge.a&&prev.b===challenge.b);$('menuError').textContent='';showChallenge()}
-document.querySelectorAll('[data-level]').forEach(btn=>btn.onclick=()=>{level=btn.dataset.level;newChallenge()});document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;showChallenge()});showChallenge();
-async function api(params,signal){let u=new URL('https://ja.wikipedia.org/w/api.php');u.search=new URLSearchParams({format:'json',formatversion:'2',origin:'*',maxlag:'5',...params});let res=await fetch(u,{signal,credentials:'omit',headers:{'Api-User-Agent':'WikiRace/0.5 (educational browser game; '+location.origin+')'}});if(!res.ok)throw Error('Wikipediaとの通信に失敗しました（HTTP '+res.status+'）');let d=await res.json();if(d.error)throw Error('Wikipedia API: '+d.error.info);return d}
-async function resolveTitles(a,b,signal){let d=await api({action:'query',titles:a+'|'+b,redirects:'1',prop:'pageprops',ppprop:'disambiguation'},signal);let q=d.query;let resolve=t=>{let v=t;for(let i=0;i<20;i++){let next=[...(q.normalized||[]),...(q.redirects||[])].find(x=>x.from===v);if(!next)break;v=next.to}let p=q.pages.find(p=>p.title===v);if(!p||p.missing||p.invalid||p.ns!==0)throw Error('記事が見つかりません：'+t);if(p.pageprops&&Object.hasOwn(p.pageprops,'disambiguation'))throw Error('曖昧さ回避ページです。別のお題を選んでください：'+t);return p.title};return [resolve(a),resolve(b)]}
-async function getPage(title,signal){if(state.demo){let d=demoData[title];if(!d)throw Error('練習記事がありません');return {title,links:d.links,html:null,text:d.text}}let c=cache.get(title);if(c)return c;let d=await api({action:'parse',page:title,redirects:'1',prop:'text|links|revid',disableeditsection:'1',disabletoc:'1'},signal);let p=d.parse;let page={title:p.title,html:typeof p.text==='string'?p.text:p.text?.['*']||'',links:[...new Set((p.links||[]).filter(x=>x.ns===0&&(x.exists===true||x.exists===''||x.exists===1)).map(x=>norm(x.title||x['*']||'')).filter(Boolean))],revid:p.revid};cache.set(title,page);cache.set(page.title,page);return page}
-function setBusy(v){busy=v;document.querySelectorAll('[data-mode]').forEach(b=>b.disabled=v);refreshPool();$('randomWiki').disabled=v;document.querySelectorAll('[data-level]').forEach(b=>b.disabled=v);$('play').disabled=v;$('custom').disabled=v;$('demo').disabled=v;$('shuffle').disabled=v;$('article').setAttribute('aria-busy',String(v));if(!v)$('transit').hidden=true}
-function clearError(){$('error').hidden=true;$('retry').hidden=true;$('status').hidden=true}
-function showError(e){$('status').hidden=true;$('error').textContent=e.message+'\n通信環境を確認して再試行してください。';$('error').hidden=false;$('retry').hidden=false}
-function resetUI(){ $('menu').hidden=true;$('game').hidden=false;$('home').hidden=false;$('version').hidden=true;$('win').hidden=true;$('article').hidden=false;$('articleTitle').textContent='記事を読み込み中';$('articleText').replaceChildren();$('links').replaceChildren();$('credit').textContent='';$('count').textContent='';$('shareMsg').textContent='';resetShare();clearError();setTab('text');update() }
-function update(){if(!state)return;updateErosion(true);$('timer').textContent=time(state.end!==null?state.end-state.begin:state.begin===null?0:performance.now()-state.begin);$('moves').textContent=String(Math.max(0,state.path.length-1));$('target').textContent=state.goal;$('hudInfo').textContent=(state.demo?'練習モード（独自記事）':'Wikipedia 本番モード')+' ／ '+modeName(state.mode)+' ／ '+levels[state.level].name;$('trail').replaceChildren();let label=document.createElement('span');label.className='trail-label';label.textContent='履歴';$('trail').append(label);state.path.forEach((v,i)=>{if(i)$('trail').append('→');let s=document.createElement('span');s.textContent=v;$('trail').append(s)});$('trail').scrollLeft=$('trail').scrollWidth}
-// Black hole progression is global to the voyage, not reset by article navigation.
+
+function remember(map,k,value,limit){
+  map.delete(k);
+  map.set(k,value);
+  if(map.size>limit)map.delete(map.keys().next().value);
+}
+
+function availableTitles(titles,seen=new Set()){
+  return titles.filter(title=>{
+    const info=titleCache.get(title);
+    if(info?.issue||titleCache.get(info?.title)?.issue)return false;
+    const canonical=info?.title??title;
+    if(seen.has(canonical))return false;
+    seen.add(canonical);
+    return true;
+  });
+}
+
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+function makeChallenge(kind=useExpanded&&extra.length?'expanded':'curated'){
+  if(kind==='expanded'){
+    const titles=availableTitles(curated.concat(extra));
+    if(titles.length<2)return null;
+    const a=pick(titles), b=pick(titles.filter(t=>t!==a));
+    return {a,b,category:'拡張星図・ジャンル制限なし',kind};
+  }
+  const choices=groupNames.map(name=>[name,availableTitles(groups[name])]).filter(([,titles])=>titles.length>=(level==='easy'?2:1));
+  if(choices.length<(level==='easy'?1:2))return null;
+  const [group,starts]=pick(choices);
+  const a=pick(starts);
+  const excluded=new Set([titleCache.get(a)?.title??a]);
+  const destinations=level==='easy'?[[group,availableTitles(starts,excluded)]]:
+    choices.filter(([name])=>name!==group).map(([name,titles])=>[name,availableTitles(titles,new Set(excluded))]).filter(([,titles])=>titles.length);
+  if(!destinations.length)return null;
+  const [destination,goals]=pick(destinations);
+  return {a,b:pick(goals),category:group===destination?group:group+' → '+destination,kind};
+}
+
+function showChallenge(){
+  if(!challenge)challenge=makeChallenge();
+  const {a,b,category,kind}=challenge??{};
+  $('startName').textContent=a??'—';
+  $('goalName').textContent=b??'—';
+  $('level').textContent=levels[level].name;
+  $('difficultyDesc').textContent=kind&&kind!=='curated'?
+    (level==='hard'?'本文中のリンクのみ。':'記事本文・リンク一覧を使えます。')+' 拡張・完全ランダムのお題はジャンル制限なし。':
+    levels[level].desc+' ※最短距離は未測定。';
+  $('poolNote').textContent=poolCount().toLocaleString('ja-JP')+' / 5,000種類・'+(useExpanded?'拡張星図':'厳選 '+curated.length+'語 / '+groupNames.length+'ジャンル')+(category?' ／ '+category:'');
+  refreshMode();
+  refreshPool();
+  $('play').disabled=busy||!challenge;
+  document.querySelectorAll('[data-level]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.level===level)));
+  const r=challenge?best(a,b):null;
+  $('best').textContent=r?'自己ベスト：'+r.moves+'クリック / '+time(r.ms):'自己ベスト：まだありません';
+}
+
+function newChallenge(){
+  const previous=challenge;
+  for(let i=0;i<8;i++){
+    challenge=makeChallenge();
+    if(!challenge||challenge.a!==previous?.a||challenge.b!==previous?.b)break;
+  }
+  $('menuError').textContent=challenge?'':'お題を選べませんでした。別の種類のお題を選ぶか、記事名を入力してください。';
+  showChallenge();
+}
+
+async function api(params,signal){
+  const url=new URL('https://ja.wikipedia.org/w/api.php');
+  url.search=new URLSearchParams({format:'json',formatversion:'2',origin:'*',maxlag:'5',...params});
+  let response;
+  try{
+    response=await fetch(url,{signal,credentials:'omit',headers:{'Api-User-Agent':'WikiRace/'+gameVersion+' (https://github.com/daodaofamas/wiki-race05)'}});
+  }catch(error){
+    if(signal.aborted)throw error;
+    throw new GameError('network','Wikipediaに接続できませんでした。通信環境を確認して再試行してください。');
+  }
+  if(!response.ok)throw new GameError('network','Wikipediaとの通信に失敗しました（HTTP '+response.status+'）。時間をおいて再試行してください。');
+  let data;
+  try{data=await response.json()}catch(error){
+    if(signal.aborted)throw error;
+    throw new GameError('network','Wikipediaからの応答を読み取れませんでした。再試行してください。');
+  }
+  if(data.error){
+    if(['missingtitle','invalidtitle','nosuchpageid'].includes(data.error.code)){
+      throw new GameError('article','記事が見つかりません。別の記事を選んでください。');
+    }
+    if(['maxlag','ratelimited','readonly'].includes(data.error.code)){
+      throw new GameError('network','Wikipediaが混み合っています。時間をおいて再試行してください。');
+    }
+    throw new GameError('network','Wikipedia APIでエラーが発生しました（'+data.error.code+'）。再試行してください。');
+  }
+  return data;
+}
+
+async function lookupTitles(titles,signal){
+  const results=new Map();
+  const names=[...new Set(titles)].filter(title=>{
+    const cached=titleCache.get(title);
+    if(!cached)return true;
+    results.set(title,titleCache.get(cached.title)?.issue?titleCache.get(cached.title):cached);
+    return false;
+  });
+  if(names.length){
+    const data=await api({action:'query',titles:names.join('|'),redirects:'1',prop:'pageprops',ppprop:'disambiguation'},signal);
+    assertActive(signal);
+    const query=data.query;
+    const incomplete='Wikipediaから記事の確認結果を受け取れませんでした。再試行してください。';
+    if(!Array.isArray(query?.pages))throw new GameError('network',incomplete);
+    const aliases=new Map([...(query.normalized??[]),...(query.redirects??[])].map(link=>[link.from,link.to]));
+    const pages=new Map(query.pages.map(page=>[page.title,page]));
+    for(const name of names){
+      let title=name;
+      const visited=new Set();
+      while(aliases.has(title)&&!visited.has(title)){
+        visited.add(title);
+        title=aliases.get(title);
+      }
+      const page=pages.get(title);
+      if(!page)throw new GameError('network',incomplete);
+      const issue=page.invalid?'invalid':page.missing?'missing':page.ns!==0?'invalid':
+        Object.hasOwn(page.pageprops??{},'disambiguation')?'disambiguation':null;
+      const result={title,issue};
+      results.set(name,result);
+      remember(titleCache,name,result,TITLE_CACHE_LIMIT);
+      if(!issue&&name!==title)remember(titleCache,title,result,TITLE_CACHE_LIMIT);
+    }
+  }
+  return titles.map(title=>results.get(title));
+}
+
+async function randomWikipedia(signal){
+  const data=await api({action:'query',generator:'random',grnnamespace:'0',grnfilterredir:'nonredirects',grnlimit:'6',prop:'pageprops',ppprop:'disambiguation'},signal);
+  const titles=availableTitles((data.query?.pages??[]).filter(p=>p.ns===0&&!p.missing&&!p.invalid&&
+    typeof p.title==='string'&&!Object.hasOwn(p.pageprops??{},'disambiguation')).map(p=>norm(p.title)).filter(t=>t&&!/[|#]/.test(t)));
+  if(titles.length<2)return null;
+  const a=pick(titles);
+  return {a,b:pick(titles.filter(t=>t!==a)),category:'Wikipediaランダム記事（難易度によるジャンル制限なし）',kind:'wikipedia'};
+}
+
+async function chooseRoute(active,signal){
+  let candidate=active.selection;
+  for(let i=0;i<4;i++){
+    const names=candidate?[candidate.a,candidate.b]:[active.start,active.goal];
+    const [start,goal]=await lookupTitles(names,signal);
+    if(!start.issue&&!goal.issue&&start.title!==goal.title){
+      try{
+        const page=await getPage(start.title,false,signal);
+        return {start:start.title,goal:goal.title,candidate,page};
+      }catch(error){
+        if(!candidate||error.kind!=='article')throw error;
+        const missing={title:start.title,issue:'missing'};
+        remember(titleCache,start.title,missing,TITLE_CACHE_LIMIT);
+        remember(titleCache,names[0],missing,TITLE_CACHE_LIMIT);
+      }
+    }else if(!candidate){
+      const invalid=[start,goal].findIndex(info=>info.issue);
+      if(invalid===-1)throw new GameError('article','スタートとゴールが同じ記事です。別のお題を選んでください。');
+      const messages={disambiguation:'曖昧さ回避ページです',missing:'記事が見つかりません',invalid:'記事名が無効です'};
+      const message=messages[[start,goal][invalid].issue];
+      throw new GameError('article',message+'（'+names[invalid]+'）。別のお題を選んでください。');
+    }
+    if(i===3)break;
+    $('status').textContent='遊べるお題を選び直しています…';
+    $('transitText').textContent='遊べるお題を選び直しています…';
+    candidate=candidate.kind==='wikipedia'?await randomWikipedia(signal):makeChallenge(candidate.kind);
+    if(!candidate)break;
+  }
+  throw new GameError('article','遊べるお題を選び直せませんでした。トップ画面から別のお題を選んでください。');
+}
+
+async function getPage(title,demo,signal){
+  if(demo){
+    const data=demoData[title];
+    if(!data)throw new GameError('article','練習記事が見つかりません。');
+    return {title,links:data.links,allowed:new Set(data.links),text:data.text};
+  }
+  const canonical=titleCache.get(title)?.title??title;
+  const saved=cache.get(canonical)??cache.get(title);
+  if(saved){
+    remember(cache,canonical,saved,ARTICLE_CACHE_LIMIT);
+    return saved;
+  }
+  const data=await api({action:'parse',page:title,redirects:'1',prop:'text|links|revid',disableeditsection:'1',disabletoc:'1'},signal);
+  assertActive(signal);
+  const parsed=data.parse;
+  if(!parsed?.title)throw new GameError('network','Wikipediaから記事の本文を受け取れませんでした。再試行してください。');
+  const links=[...new Set((parsed.links??[]).filter(x=>x.ns===0&&(x.exists===true||x.exists===''||x.exists===1))
+    .map(x=>norm(x.title||x['*']||'')).filter(t=>t&&t!==parsed.title))];
+  const page={title:parsed.title,html:typeof parsed.text==='string'?parsed.text:parsed.text?.['*']||'',links,allowed:new Set(links),revid:parsed.revid};
+  remember(cache,title,page,ARTICLE_CACHE_LIMIT);
+  if(page.title!==title)remember(cache,page.title,page,ARTICLE_CACHE_LIMIT);
+  return page;
+}
+
+function setBusy(value){
+  busy=value;
+  document.querySelectorAll('[data-mode], [data-level]').forEach(button=>button.disabled=value);
+  refreshPool();
+  for(const id of ['randomWiki','custom','demo','shuffle','restart','retry','again'])$(id).disabled=value;
+  $('play').disabled=value||!challenge;
+  $('article').setAttribute('aria-busy',String(value));
+  if(!value)$('transit').hidden=true;
+}
+
+function stopJobs(){
+  linkJob?.controller.abort();
+  linkJob=null;
+  erosionJob?.controller.abort();
+  erosionJob=null;
+  $('links').removeAttribute('aria-busy');
+}
+
+function clearError(){
+  for(const id of ['error','retry','errorHome','status'])$(id).hidden=true;
+}
+
+function showError(error){
+  $('status').hidden=true;
+  $('error').textContent=error.message;
+  $('error').hidden=false;
+  $('retry').hidden=error.kind==='article';
+  $('errorHome').hidden=false;
+  $('error').scrollIntoView({block:'nearest'});
+}
+
+function resetUI(){
+  $('menu').hidden=true;
+  $('game').hidden=false;
+  $('home').hidden=false;
+  $('version').hidden=true;
+  $('win').hidden=true;
+  $('article').hidden=false;
+  $('articleTitle').textContent='記事を読み込み中';
+  $('articleText').replaceChildren();
+  $('links').replaceChildren();
+  $('credit').textContent='';
+  $('count').textContent='';
+  $('shareMsg').textContent='';
+  resetShare();
+  clearError();
+  selectTab('text');
+  update();
+}
+
+function update(){
+  if(!state)return;
+  $('timer').textContent=time(elapsed(state));
+  $('moves').textContent=String(Math.max(0,state.path.length-1));
+  $('target').textContent=state.goal;
+  $('hudInfo').textContent=(state.demo?'練習モード（独自記事）':'Wikipedia 本番モード')+' ／ '+modeName(state.mode)+' ／ '+levels[state.level].name;
+  const trail=$('trail');
+  trail.replaceChildren();
+  const label=document.createElement('span');
+  label.className='trail-label';
+  label.textContent='履歴';
+  trail.append(label);
+  state.path.forEach((title,i)=>{
+    if(i)trail.append('→');
+    const entry=document.createElement('span');
+    entry.textContent=title;
+    trail.append(entry);
+  });
+  requestAnimationFrame(()=>{trail.scrollLeft=trail.scrollWidth});
+  updateErosion();
+}
+
+function assertActive(signal){
+  if(signal.aborted)throw new DOMException('Aborted','AbortError');
+}
+
+async function renderYield(signal){
+  assertActive(signal);
+  if(window.scheduler?.yield)await window.scheduler.yield();
+  else await new Promise(resolve=>setTimeout(resolve,0));
+  assertActive(signal);
+}
+
+function createView(){
+  return {root:document.createElement('div'),buttons:[],percent:0,seed:null};
+}
+
+function addLink(view,container,title,label,chip=false){
+  const button=document.createElement('button');
+  button.type='button';
+  button.className=chip?'linkchip':'wiki-link';
+  button.dataset.wikiTitle=title;
+  button.textContent=label;
+  view.buttons.push({button,title,label,shown:label,seed:null,order:null,chars:null});
+  container.append(button);
+}
+
+function titleFromAnchor(a){
+  const href=a.getAttribute('href')??'';
+  if(!href||href.startsWith('#'))return null;
+  try{
+    const url=new URL(href,'https://ja.wikipedia.org/wiki/');
+    if(url.origin!=='https://ja.wikipedia.org'||url.username||url.password||!url.pathname.startsWith('/wiki/'))return null;
+    return norm(decodeURIComponent(url.pathname.slice(6)));
+  }catch{return null}
+}
+
+const articleSkip=new Set(['SCRIPT','STYLE','IFRAME','OBJECT','EMBED','SVG','MATH','IMG','PICTURE','SOURCE','VIDEO','AUDIO','FORM','INPUT','BUTTON','TABLE','SUP','NOSCRIPT','LINK','META','BASE','TEMPLATE']);
+const articleStructure=new Set(['P','H2','H3','H4','H5','UL','OL','LI','DL','DT','DD','B','STRONG','I','EM','BLOCKQUOTE','BR','HR']);
+const articleDecorations='.navbox,.infobox,.metadata,.ambox,.hatnote,.mw-editsection,.reference,.reflist,.references,.toc,.noprint,.mw-empty-elt,.sidebar,.sistersitebox,.thumb,figure,.shortdescription,.catlinks,.authority-control,.mw-indicators';
+
+async function prepareArticle(page,demo,signal){
+  if(page.body)return page.body;
+  const view=createView();
+  if(demo){
+    const para=document.createElement('p');
+    para.textContent=page.text;
+    const links=document.createElement('p');
+    links.append('関連する記事：');
+    page.links.forEach((title,i)=>{
+      if(i)links.append('、');
+      addLink(view,links,title,title);
+    });
+    view.root.append(para,links);
+  }else{
+    // Template contents stay inert. Only newly created elements and text enter the live article.
+    const template=document.createElement('template');
+    template.innerHTML=page.html;
+    const source=template.content.querySelector('.mw-parser-output')??template.content;
+    const stack=[[source.firstChild,view.root]];
+    let section=null, sectionSize=0;
+    function targetFor(node,destination){
+      if(destination!==view.root)return destination;
+      if(!section||sectionSize>=10){
+        section=document.createElement('div');
+        section.className='article-section';
+        view.root.append(section);
+        sectionSize=0;
+      }
+      if(node.nodeType===Node.ELEMENT_NODE||node.textContent.trim())sectionSize++;
+      return section;
+    }
+    let deadline=performance.now()+RENDER_SLICE_MS;
+    while(stack.length){
+      const [node,destination]=stack.pop();
+      if(!node)continue;
+      if(node.nextSibling)stack.push([node.nextSibling,destination]);
+      if(node.nodeType===Node.TEXT_NODE){
+        targetFor(node,destination).append(document.createTextNode(node.textContent));
+      }else if(node.nodeType===Node.ELEMENT_NODE&&node.namespaceURI==='http://www.w3.org/1999/xhtml'&&
+        !articleSkip.has(node.tagName)&&!node.matches(articleDecorations)){
+        if(node.tagName==='A'){
+          const title=titleFromAnchor(node);
+          const target=targetFor(node,destination);
+          if(title&&page.allowed.has(title))addLink(view,target,title,node.textContent||title);
+          else target.append(document.createTextNode(node.textContent));
+        }else{
+          const tag=node.tagName==='H2'?'h3':node.localName;
+          const childDestination=articleStructure.has(node.tagName)?document.createElement(tag):destination;
+          if(childDestination!==destination)targetFor(node,destination).append(childDestination);
+          if(node.firstChild)stack.push([node.firstChild,childDestination]);
+        }
+      }
+      if(performance.now()>=deadline){
+        await renderYield(signal);
+        deadline=performance.now()+RENDER_SLICE_MS;
+      }
+    }
+  }
+  assertActive(signal);
+  page.body=view;
+  delete page.html;
+  return view;
+}
+
 const erosionStages=[[0,0],[20,15],[40,30],[60,45],[90,60],[120,80],[180,100]];
-function erosionStage(seconds){let n=0;for(let i=1;i<erosionStages.length;i++)if(seconds>=erosionStages[i][0])n=i;return n}
-function hash(v){let h=2166136261;for(let c of v){h^=c.codePointAt(0);h=Math.imul(h,16777619)}return h>>>0}
-function maskLabel(entry,percent){if(!percent)return entry.label;let chars=Array.from(entry.label),positions=chars.map((c,i)=>({c,i,h:hash(state.seed+'|'+entry.title+'|'+entry.label+'|'+i)})).filter(v=>!/^\s$/.test(v.c)).sort((a,b)=>a.h-b.h);let count=Math.floor(positions.length*percent/100+0.5);for(let i=0;i<count;i++)chars[positions[i].i]='■';return chars.join('')}
-function updateErosion(force=false){let active=state?.mode==='blackhole';$('erosion').hidden=!active;if(!active)return;let seconds=state.begin===null?0:Math.max(0,((state.end??performance.now())-state.begin)/1000);let stage=erosionStage(seconds), percent=erosionStages[stage][1],next=erosionStages[stage+1];$('erosionPercent').textContent=percent+'%';$('erosionBar').style.width=percent+'%';$('erosionNext').textContent=next?'次の侵食まで '+Math.max(0,Math.ceil(next[0]-seconds))+'秒':'最大侵食・リンクは押せます';if(force||state.lastStage!==stage){state.lastStage=stage;for(const entry of state.maskLinks){let label=maskLabel(entry,percent);entry.el.textContent=label;entry.el.classList.toggle('eroded',label!==entry.label)}}}
-setInterval(()=>{if(state&&state.begin!==null&&state.end===null){$('timer').textContent=time(performance.now()-state.begin);updateErosion()}},200);
-function start(a,b,demo=false,chosenLevel=level,chosenMode=mode){a=norm(a);b=norm(b);if(!a||!b||a===b||/[|#]/.test(a+b)){$('menuError').textContent=$('customError').textContent='異なる記事名を2つ入力してください（| や # は使用不可）。';return} $('menuError').textContent=$('customError').textContent='';controller?.abort();seq++;state={start:a,goal:b,demo,level:demo?'easy':chosenLevel,mode:chosenMode,seed:String(Math.random()),maskLinks:[],lastStage:-1,path:[],begin:null,end:null,page:null};resetUI();load(a,true);window.scrollTo(0,0)}
-function makeLink(title,label,chip=false){let el=document.createElement('button');el.type='button';el.className=chip?'linkchip':'wiki-link';el.textContent=label;if(state.mode==='blackhole')state.maskLinks.push({el,title,label});el.addEventListener('click',()=>{if(!busy&&state&&state.end===null&&state.page?.links.includes(title))load(title)});return el}
-function titleFromAnchor(a){let h=a.getAttribute('href')||'';if(h.startsWith('#'))return null;try{let u=new URL(h,'https://ja.wikipedia.org/wiki/');if(u.hostname!=='ja.wikipedia.org'||!u.pathname.startsWith('/wiki/'))return null;return norm(decodeURIComponent(u.pathname.slice(6)))}catch{return null}}
-function safeArticle(html,allowed){let src=new DOMParser().parseFromString(html,'text/html');let out=document.createDocumentFragment();let skip=new Set(['SCRIPT','STYLE','IFRAME','OBJECT','EMBED','SVG','MATH','IMG','VIDEO','AUDIO','FORM','INPUT','BUTTON','TABLE','SUP','NOSCRIPT','LINK','META']);let structural=new Set(['P','H2','H3','H4','H5','UL','OL','LI','DL','DT','DD','B','STRONG','I','EM','BLOCKQUOTE','BR','HR']);function walk(node,dest){if(node.nodeType===3){dest.append(document.createTextNode(node.textContent));return}if(node.nodeType!==1)return;if(skip.has(node.tagName)||node.matches('.navbox,.infobox,.metadata,.ambox,.hatnote,.mw-editsection,.reference,.reflist,.references,.toc,.noprint,.mw-empty-elt,.sidebar,.sistersitebox,.thumb,figure,.shortdescription,.catlinks,.authority-control,.mw-indicators'))return;if(node.tagName==='A'){let title=titleFromAnchor(node);if(title&&allowed.has(title)){dest.append(makeLink(title,node.textContent||title));return}dest.append(document.createTextNode(node.textContent));return}let el=structural.has(node.tagName)?document.createElement(node.tagName==='H2'?'h3':node.tagName.toLowerCase()):dest;for(let child of node.childNodes)walk(child,el);if(el!==dest)dest.append(el)}let root=src.querySelector('.mw-parser-output')||src.body;for(let node of root.childNodes)walk(node,out);return out}
-function render(p){state.maskLinks=[];state.lastStage=-1;$('articleTitle').textContent=p.title;$('articleMode').textContent=state.demo?'練習用記事':'日本語版Wikipedia・実際の記事';$('tabLinks').hidden=state.level==='hard';$('articleText').replaceChildren();$('links').replaceChildren();let all=p.links.filter(t=>t!==p.title);if(state.demo){let para=document.createElement('p');para.textContent=p.text;$('articleText').append(para);let para2=document.createElement('p');para2.append('関連する記事：');all.forEach((t,i)=>{if(i)para2.append('、');para2.append(makeLink(t,t))});$('articleText').append(para2)}else{$('articleText').append(safeArticle(p.html,new Set(all)))}if(state.level!=='hard')all.forEach(t=>$('links').append(makeLink(t,t,true)));if(state.level==='hard'&&!$('articleText').querySelector('.wiki-link')){let n=document.createElement('p');n.className='hint';n.textContent='本文に移動可能なリンクがありません。最初から、または別のお題に挑戦できます。';$('articleText').append(n)}$('count').textContent='('+all.length+')';if(!all.length)$('links').textContent='移動可能なリンクがありません。最初からやり直せます。';$('credit').replaceChildren();if(!state.demo){$('credit').append('出典：Wikipedia「'+p.title+'」');let a=document.createElement('a');a.href='https://ja.wikipedia.org/w/index.php?title='+encodeURIComponent(p.title)+'&oldid='+encodeURIComponent(p.revid);a.target='_blank';a.rel='noopener noreferrer';a.textContent='（原文・履歴）';$('credit').append(a,' ／ CC BY-SA 4.0 ・抜粋、表示整形')}else $('credit').textContent='練習用の独自記事（Wikipediaからの取得ではありません）';setTab('text');updateErosion(true)}
-async function load(title,first=false){if(!state)return;let id=++seq;controller?.abort();controller=new AbortController();let signal=controller.signal;let activeController=controller;let timeout=setTimeout(()=>activeController.abort(),25000);pending={title,first};setBusy(true);clearError();let launched=performance.now();$('transitTitle').textContent=title;$('transitText').textContent=first?'出発地点へ向かっています…':'次の星へ航行中…';$('transit').hidden=false;$('status').hidden=false;$('status').textContent=state.demo?'練習記事を読み込み中…':'日本語版Wikipediaから記事を取得中…';try{if(first&&!state.demo){let [a,b]=await resolveTitles(state.start,state.goal,signal);if(id!==seq)return;if(a===b)throw Error('スタートとゴールが同じ記事です');if(challenge?.a===state.start&&challenge?.b===state.goal){challenge.a=a;challenge.b=b}state.start=a;state.goal=b;title=a}let p=await getPage(title,signal);await new Promise(r=>setTimeout(r,Math.max(0,320-(performance.now()-launched))));if(id!==seq)return;state.page=p;if(first){state.path=[p.title];state.begin=performance.now()}else state.path.push(p.title);render(p);clearError();update();$('article').classList.remove('arrival');void $('article').offsetWidth;$('article').classList.add('arrival');if(p.title===state.goal)finish();window.scrollTo(0,0)}catch(e){if(id===seq)showError(e.name==='AbortError'?Error('通信がタイムアウトしました'):e)}finally{clearTimeout(timeout);if(id===seq)setBusy(false)}}
+function elapsed(active){
+  return active.begin===null?0:(active.end??performance.now())-active.begin;
+}
+
+function erosionStage(seconds){
+  let stage=0;
+  for(let i=1;i<erosionStages.length&&seconds>=erosionStages[i][0];i++)stage=i;
+  return stage;
+}
+
+function erosionPercent(active){
+  return active.mode==='blackhole'?erosionStages[erosionStage(elapsed(active)/1000)][1]:0;
+}
+
+function hash(value,seed=2166136261){
+  let result=seed;
+  for(const ch of value){
+    result^=ch.codePointAt(0);
+    result=Math.imul(result,16777619);
+  }
+  return result>>>0;
+}
+
+function maskedLabel(entry,percent,seed){
+  if(!percent)return entry.label;
+  if(percent===100)return entry.label.replace(/\S/gu,'■');
+  if(entry.seed!==seed){
+    entry.seed=seed;
+    entry.chars=Array.from(entry.label);
+    const prefix=hash(seed+'|'+entry.title+'|'+entry.label+'|');
+    entry.order=entry.chars.map((ch,index)=>({ch,index,rank:hash(String(index),prefix)}))
+      .filter(({ch})=>!/^\s$/.test(ch)).sort((a,b)=>a.rank-b.rank).map(({index})=>index);
+  }
+  const count=Math.round(entry.order.length*percent/100);
+  if(!count)return entry.label;
+  const chars=entry.chars.slice();
+  for(let i=0;i<count;i++)chars[entry.order[i]]='■';
+  return chars.join('');
+}
+
+async function paintLinks(view,percent,seed,signal){
+  assertActive(signal);
+  if(view.percent===percent&&(!percent||view.seed===seed))return;
+  view.percent=null;
+  let deadline=performance.now()+RENDER_SLICE_MS;
+  for(const entry of view.buttons){
+    const label=maskedLabel(entry,percent,seed);
+    if(label!==entry.shown){
+      entry.shown=label;
+      entry.button.textContent=label;
+      entry.button.classList.toggle('eroded',label!==entry.label);
+    }
+    if(performance.now()>=deadline){
+      await renderYield(signal);
+      deadline=performance.now()+RENDER_SLICE_MS;
+    }
+  }
+  assertActive(signal);
+  view.percent=percent;
+  view.seed=seed;
+}
+
+function updateErosion(){
+  const active=state;
+  $('erosion').hidden=active?.mode!=='blackhole';
+  if(!active)return;
+  const seconds=elapsed(active)/1000;
+  const stage=erosionStage(seconds);
+  const percent=active.mode==='blackhole'?erosionStages[stage][1]:0;
+  if(active.mode==='blackhole'){
+    const percentText=percent+'%';
+    const next=erosionStages[stage+1];
+    const nextText=next?'次の侵食まで '+Math.max(0,Math.ceil(next[0]-seconds))+'秒':'最大侵食・リンクは押せます';
+    if($('erosionPercent').textContent!==percentText){
+      $('erosionPercent').textContent=percentText;
+      $('erosionBar').style.width=percentText;
+    }
+    if($('erosionNext').textContent!==nextText)$('erosionNext').textContent=nextText;
+  }
+  if(busy||!active.page||active.end!==null)return;
+  const view=$('linkPanel').hidden?active.page.body:active.page.list;
+  if(erosionJob?.view===view&&erosionJob.percent===percent)return;
+  erosionJob?.controller.abort();
+  erosionJob=null;
+  if(!view||(view.percent===percent&&(!percent||view.seed===active.seed)))return;
+  const job={view,percent,controller:new AbortController()};
+  erosionJob=job;
+  paintLinks(view,percent,active.seed,job.controller.signal)
+    .catch(error=>{if(error.name!=='AbortError')console.error(error)})
+    .finally(()=>{if(erosionJob===job)erosionJob=null});
+}
+
+setInterval(()=>{
+  if(!state||state.begin===null||state.end!==null)return;
+  const display=time(elapsed(state));
+  if($('timer').textContent!==display)$('timer').textContent=display;
+  if(state.mode==='blackhole')updateErosion();
+},200);
+
+function start(a,b,demo=false,chosenLevel=level,chosenMode=mode,selection=null){
+  if(busy)return;
+  a=norm(a);
+  b=norm(b);
+  if(!a||!b||a===b||/[|#]/.test(a+b)){
+    $('menuError').textContent=$('customError').textContent='異なる記事名を2つ入力してください（| や # は使用不可）。';
+    return;
+  }
+  $('menuError').textContent=$('customError').textContent='';
+  controller?.abort();
+  stopJobs();
+  state={start:a,goal:b,demo,selection,level:demo?'easy':chosenLevel,mode:chosenMode,
+    seed:String(Math.random()),path:[],begin:null,end:null,page:null};
+  resetUI();
+  window.scrollTo(0,0);
+  load(a,true);
+}
+
+function commitArticle(page,view){
+  $('articleTitle').textContent=page.title;
+  $('articleMode').textContent=state.demo?'練習用記事':'日本語版Wikipedia・実際の記事';
+  $('tabLinks').hidden=state.level==='hard';
+  $('articleText').replaceChildren(view.root);
+  $('links').replaceChildren();
+  $('count').textContent='('+page.links.length+')';
+  if(state.level==='hard'&&!view.buttons.length){
+    const message=document.createElement('p');
+    message.className='hint';
+    message.textContent='本文に移動可能なリンクがありません。最初から、または別のお題に挑戦できます。';
+    $('articleText').append(message);
+  }
+  $('credit').replaceChildren();
+  if(state.demo)$('credit').textContent='練習用の独自記事（Wikipediaからの取得ではありません）';
+  else{
+    const source=document.createElement('a');
+    const url=new URL('https://ja.wikipedia.org/w/index.php');
+    url.search=new URLSearchParams({title:page.title,oldid:String(page.revid)});
+    source.href=url.href;
+    source.target='_blank';
+    source.rel='noopener noreferrer';
+    source.textContent='（原文・履歴）';
+    $('credit').append('出典：Wikipedia「'+page.title+'」',source,' ／ CC BY-SA 4.0 ・抜粋、表示整形');
+  }
+  selectTab('text');
+}
+
+async function load(title,first=false){
+  if(!state||busy)return;
+  const active=state, id=++seq;
+  controller?.abort();
+  stopJobs();
+  controller=new AbortController();
+  const request=controller, signal=request.signal;
+  let timedOut=false;
+  const timeout=setTimeout(()=>{timedOut=true;request.abort()},25000);
+  pending={title,first};
+  setBusy(true);
+  clearError();
+  $('article').classList.remove('arrival');
+  const launched=performance.now();
+  $('transitTitle').textContent=title;
+  $('transitText').textContent=first?'出発地点へ向かっています…':'次の星へ航行中…';
+  $('transit').hidden=false;
+  $('status').hidden=false;
+  $('status').textContent=active.demo?'練習記事を読み込み中…':'日本語版Wikipediaから記事を取得中…';
+  try{
+    const route=first&&!active.demo?await chooseRoute(active,signal):null;
+    assertActive(signal);
+    if(route){
+      title=route.start;
+      $('transitTitle').textContent=title;
+    }
+    const page=route?.page??await getPage(title,active.demo,signal);
+    clearTimeout(timeout);
+    assertActive(signal);
+    const cached=Boolean(page.body);
+    const view=await prepareArticle(page,active.demo,signal);
+    const remaining=(cached?150:320)-(performance.now()-launched);
+    if(remaining>0)await new Promise(resolve=>setTimeout(resolve,remaining));
+    assertActive(signal);
+    await paintLinks(view,erosionPercent(active),active.seed,signal);
+    if(id!==seq||signal.aborted)return;
+    if(route){
+      if(route.candidate)challenge={...route.candidate,a:route.start,b:route.goal};
+      active.start=route.start;
+      active.goal=route.goal;
+    }
+    active.page=page;
+    if(first){
+      active.path=[page.title];
+      active.begin=performance.now();
+    }else active.path.push(page.title);
+    if(window.scrollY)window.scrollTo(0,0);
+    commitArticle(page,view);
+    clearError();
+    update();
+    $('article').classList.add('arrival');
+    if(page.title===active.goal)finish();
+  }catch(error){
+    if(id===seq){
+      const shown=timedOut?new GameError('timeout','Wikipediaからの応答が時間内に届きませんでした。再試行してください。'):
+        error instanceof GameError?error:new GameError('display','記事を表示できませんでした。再試行してください。');
+      if(first&&active.selection&&shown.kind==='article')challenge=null;
+      showError(shown);
+      if(!(error instanceof GameError)&&!timedOut)console.error(error);
+    }
+  }finally{
+    clearTimeout(timeout);
+    if(id===seq){
+      setBusy(false);
+      updateErosion();
+    }
+  }
+}
+
+function selectTab(tab){
+  const isText=tab==='text'||state?.level==='hard';
+  $('articleText').hidden=!isText;
+  $('linkPanel').hidden=isText;
+  $('tabText').classList.toggle('active',isText);
+  $('tabLinks').classList.toggle('active',!isText);
+  $('tabText').setAttribute('aria-pressed',String(isText));
+  $('tabLinks').setAttribute('aria-pressed',String(!isText));
+}
+
+async function showLinks(){
+  if(busy||!state?.page||state.level==='hard')return;
+  const active=state, page=active.page;
+  selectTab('links');
+  if(page.list&&$('links').contains(page.list.root)){
+    updateErosion();
+    return;
+  }
+  if(linkJob)return;
+  const job={controller:new AbortController()};
+  const signal=job.controller.signal;
+  linkJob=job;
+  $('links').setAttribute('aria-busy','true');
+  const status=document.createElement('p');
+  status.setAttribute('role','status');
+  status.textContent='リンク一覧を準備中…';
+  $('links').replaceChildren(status);
+  try{
+    const view=page.list??createView();
+    if(!page.list){
+      view.root.className='link-batches';
+      let deadline=performance.now()+RENDER_SLICE_MS;
+      let batch;
+      for(let i=0;i<page.links.length;i++){
+        if(i%48===0){
+          batch=document.createElement('div');
+          batch.className='link-batch';
+          view.root.append(batch);
+        }
+        const title=page.links[i];
+        addLink(view,batch,title,title,true);
+        if(performance.now()>=deadline){
+          await renderYield(signal);
+          deadline=performance.now()+RENDER_SLICE_MS;
+        }
+      }
+      if(!page.links.length)view.root.textContent='移動可能なリンクがありません。最初からやり直せます。';
+    }
+    await paintLinks(view,erosionPercent(active),active.seed,signal);
+    assertActive(signal);
+    if(state!==active||active.page!==page)return;
+    page.list=view;
+    $('links').replaceChildren(view.root);
+    updateErosion();
+  }catch(error){
+    if(error.name!=='AbortError')status.textContent='リンク一覧を表示できませんでした。もう一度開いてください。';
+  }finally{
+    if(linkJob===job){
+      linkJob=null;
+      $('links').removeAttribute('aria-busy');
+    }
+  }
+}
+
+function goHome(){
+  resetShare();
+  controller?.abort();
+  stopJobs();
+  seq++;
+  state=null;
+  setBusy(false);
+  $('menu').hidden=false;
+  $('game').hidden=true;
+  $('home').hidden=true;
+  $('version').hidden=false;
+  showChallenge();
+  window.scrollTo(0,0);
+}
+
+function navigate(event){
+  const button=event.target.closest('button[data-wiki-title]');
+  if(busy||!button||!state||state.end!==null)return;
+  const title=button.dataset.wikiTitle;
+  if(state.page?.allowed.has(title))load(title);
+}
+
+document.querySelectorAll('[data-level]').forEach(button=>button.onclick=()=>{level=button.dataset.level;newChallenge()});
+document.querySelectorAll('[data-mode]').forEach(button=>button.onclick=()=>{mode=button.dataset.mode;showChallenge()});
+$('articleText').addEventListener('click',navigate);
+$('links').addEventListener('click',navigate);
+showChallenge();
+
 function finish(){state.end=performance.now();update();$('article').hidden=true;$('win').hidden=false;let r={moves:state.path.length-1,ms:state.end-state.begin};$('result').textContent=r.moves+'クリック ／ '+time(r.ms);$('modeResult').textContent=modeName(state.mode)+'モード'+(state.mode==='blackhole'?' ／ 最終侵食 '+erosionStages[erosionStage(r.ms/1000)][1]+'%':'');let old=best(state.start,state.goal,state.level,state.mode);let improved=!old||r.moves<old.moves||(r.moves===old.moves&&r.ms<old.ms);$('recordMessage').textContent=state.demo?'練習クリア！':improved?(save(state.start,state.goal,r,state.level,state.mode)?'自己ベスト更新！':'自己ベスト相当（端末への保存はできませんでした）'):'おめでとう！ 次は自己ベストを目指そう。';prepareShare()}
-function setTab(v){if(state?.level==='hard')v='text';let isText=v==='text';$('articleText').hidden=!isText;$('linkPanel').hidden=isText;$('tabText').classList.toggle('active',isText);$('tabLinks').classList.toggle('active',!isText);$('tabText').setAttribute('aria-pressed',String(isText));$('tabLinks').setAttribute('aria-pressed',String(!isText))}
-function goHome(){resetShare();controller?.abort();seq++;state=null;setBusy(false);$('menu').hidden=false;$('game').hidden=true;$('home').hidden=true;$('version').hidden=false;showChallenge();window.scrollTo(0,0)}
+
 async function expandPool(){if(busy||poolCount()>=POOL_TARGET)return;const id=++seq;controller?.abort();controller=new AbortController();const ctrl=controller,signal=ctrl.signal;collecting=true;setBusy(true);$('menuError').textContent='';let known=new Set(curated.concat(extra));let stopped=false;try{for(let i=0;i<30&&known.size<POOL_TARGET;i++){if(signal.aborted)break;$('poolStatus').textContent='星図を取得中… '+known.size.toLocaleString('ja-JP')+' / 5,000';let timeout=setTimeout(()=>ctrl.abort(),25000),d;try{d=await api({action:'query',generator:'random',grnnamespace:'0',grnfilterredir:'nonredirects',grnminsize:'1500',grnlimit:'500',prop:'pageprops',ppprop:'disambiguation'},signal)}finally{clearTimeout(timeout)}if(id!==seq)return;for(const p of (d.query?.pages||[])){if(known.size>=POOL_TARGET)break;if(p.ns!==0||p.missing||p.invalid||p.redirect||p.pageprops&&Object.hasOwn(p.pageprops,'disambiguation')||typeof p.title!=='string')continue;let t=norm(p.title);if(!t||known.has(t)||t.includes('|'))continue;known.add(t);extra.push(t)}try{localStorage.setItem(POOL_KEY,JSON.stringify(extra))}catch{}refreshPool();if(known.size<POOL_TARGET)await new Promise(r=>setTimeout(r,700))}stopped=signal.aborted;$('poolStatus').textContent=stopped?'取得を中止しました。続きから再開できます。':known.size>=POOL_TARGET?'星図5,000語の取得完了！ 次回もこの端末で利用できます。':'一部取得しました。もう一度拡張すると続きから取得できます。'}catch(e){if(id!==seq)return;$('poolStatus').textContent=signal.aborted?'取得を中止、または通信がタイムアウトしました。続きから再開できます。':e.message+' ／ 取得済みの候補は利用できます。'}finally{if(id===seq){collecting=false;setBusy(false);if(extra.length){useExpanded=true;newChallenge()}refreshPool()}}}
 $('expandPool').onclick=expandPool;$('cancelPool').onclick=()=>{controller?.abort();$('poolStatus').textContent='取得を中止しています…'};$('togglePool').onclick=()=>{if(busy)return;useExpanded=!useExpanded;newChallenge()};
-$('play').onclick=()=>start(challenge.a,challenge.b);$('shuffle').onclick=newChallenge;
-$('randomWiki').onclick=async()=>{if(busy)return;const id=++seq;controller?.abort();controller=new AbortController();let signal=controller.signal;let timeout=setTimeout(()=>controller.abort(),20000);setBusy(true);$('menuError').textContent='';$('menuStatus').textContent='Wikipediaからランダム記事を選んでいます…';$('menuStatus').hidden=false;try{let d=await api({action:'query',generator:'random',grnnamespace:'0',grnfilterredir:'nonredirects',grnlimit:'6',prop:'pageprops',ppprop:'disambiguation'},signal);if(id!==seq)return;let titles=[...new Set((d.query?.pages||[]).filter(p=>p.ns===0&&!p.missing&&!(p.pageprops&&Object.hasOwn(p.pageprops,'disambiguation'))).map(p=>p.title))];if(titles.length<2)throw Error('お題を取得できませんでした。もう一度お試しください。');let a=pick(titles),b=pick(titles.filter(t=>t!==a));challenge={a,b,category:'Wikipediaランダム記事（難易度によるジャンル制限なし）',random:true};showChallenge()}catch(e){if(id===seq)$('menuError').textContent=e.name==='AbortError'?'通信がタイムアウトしました。':e.message}finally{clearTimeout(timeout);if(id===seq){$('menuStatus').hidden=true;setBusy(false)}}};$('custom').onclick=()=>start($('customStart').value,$('customGoal').value);$('demo').onclick=()=>start('猫','月',true);$('home').onclick=goHome;$('retry').onclick=()=>{if(pending)load(pending.title,pending.first)};$('restart').onclick=()=>{if(state)start(state.start,state.goal,state.demo,state.level,state.mode)};$('again').onclick=$('restart').onclick;$('tabText').onclick=()=>setTab('text');$('tabLinks').onclick=()=>setTab('links');// Result image is rendered locally, without external images or screenshot libraries.
+$('play').onclick=()=>{if(challenge)start(challenge.a,challenge.b,false,level,mode,challenge)};
+$('shuffle').onclick=newChallenge;
+$('randomWiki').onclick=async()=>{
+  if(busy)return;
+  const id=++seq, request=new AbortController();
+  controller?.abort();
+  controller=request;
+  const timeout=setTimeout(()=>request.abort(),20000);
+  setBusy(true);
+  $('menuError').textContent='';
+  $('menuStatus').textContent='Wikipediaからランダム記事を選んでいます…';
+  $('menuStatus').hidden=false;
+  try{
+    const candidate=await randomWikipedia(request.signal);
+    if(id!==seq)return;
+    if(!candidate)throw new GameError('article','遊べる記事を2件取得できませんでした。もう一度お試しください。');
+    challenge=candidate;
+    showChallenge();
+  }catch(error){
+    if(id===seq)$('menuError').textContent=request.signal.aborted?'Wikipediaからの応答が時間内に届きませんでした。再試行してください。':error.message;
+  }finally{
+    clearTimeout(timeout);
+    if(id===seq){
+      $('menuStatus').hidden=true;
+      setBusy(false);
+    }
+  }
+};
+$('custom').onclick=()=>start($('customStart').value,$('customGoal').value);
+$('demo').onclick=()=>start('猫','月',true);
+$('home').onclick=$('errorHome').onclick=goHome;
+$('retry').onclick=()=>{if(pending&&!busy)load(pending.title,pending.first)};
+$('restart').onclick=()=>{if(state)start(state.start,state.goal,state.demo,state.level,state.mode)};
+$('again').onclick=$('restart').onclick;
+$('tabText').onclick=()=>{
+  if(busy)return;
+  selectTab('text');
+  updateErosion();
+};
+$('tabLinks').onclick=showLinks;
+
+// Result image is rendered locally, without external images or screenshot libraries.
 let shareFile=null,shareObjectURL=null,shareGeneration=0;
 function gameURL(){return /^https?:$/.test(location.protocol)?location.origin+location.pathname:''}
 function shareText(){if(!state||state.end===null)return '';return 'Wiki Race '+(state.demo?'練習 / ':'')+modeName(state.mode)+'モード / '+levels[state.level].name+'クリア！\n'+state.path.join(' → ')+'\n'+(state.path.length-1)+'クリック / '+time(state.end-state.begin)+(gameURL()?'\n'+gameURL():'')}
@@ -104,5 +837,18 @@ async function copyResult(){let t=shareText();if(!t)return;try{await navigator.c
 $('copyResult').onclick=copyResult;
 $('saveImage').onclick=()=>{if(!shareObjectURL)return;let a=document.createElement('a');a.href=shareObjectURL;a.download='wiki-race-result.png';document.body.append(a);a.click();a.remove();$('shareMsg').textContent='保存できない場合は、下の結果画像を長押ししてください。'};
 $('share').onclick=async()=>{let t=shareText();if(!t)return;try{if(navigator.share){let data={text:t};if(shareFile&&navigator.canShare&&navigator.canShare({files:[shareFile]})){await navigator.share({...data,files:[shareFile]});$('shareMsg').textContent='';return}await navigator.share(data);$('shareMsg').textContent='画像は「結果画像を保存」から添付できます。'}else{await copyResult();$('shareMsg').textContent+='\n画像は「結果画像を保存」から添付できます。'}}catch(e){if(e.name==='AbortError')return;$('shareMsg').textContent='一括共有できませんでした。「結果・URLをコピー」と「結果画像を保存」をお使いください。'}};
-$('cancelTransit').onclick=()=>{if(!state)return;controller?.abort();seq++;setBusy(false);if(!state.path.length){goHome();return}clearError();$('error').textContent='航行を中止しました。再試行するか、他のリンクを選んでください。';$('error').hidden=false;$('retry').hidden=false};
+$('cancelTransit').onclick=()=>{
+  if(!state||!busy)return;
+  if(!state.path.length){
+    goHome();
+    return;
+  }
+  controller?.abort();
+  stopJobs();
+  seq++;
+  setBusy(false);
+  showError(new GameError('cancelled','航行を中止しました。再試行するか、他のリンクを選んでください。'));
+  updateErosion();
+};
+
 </script></body></html>
